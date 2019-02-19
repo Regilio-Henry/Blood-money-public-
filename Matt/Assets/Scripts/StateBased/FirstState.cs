@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using StateStuff;
 
-public class FirstState : State<AI>
+public class FirstState : State<AI>  //removed monobehavior, using statestuff, AI is using this state. 
 {
-    private static FirstState _instance;
+    private static FirstState _instance; //only declared one time. can only be created from within the state class. 
 
-    private FirstState()
+    private FirstState() 
     {
         if (_instance != null)
         {
@@ -15,7 +15,7 @@ public class FirstState : State<AI>
         }
     
 
-        _instance = this;
+        _instance = this; 
     }
 
     public static FirstState Instance
@@ -24,24 +24,24 @@ public class FirstState : State<AI>
         {
             if (_instance == null)
             {
-                new FirstState();
+                new FirstState(); //if the state doesnt already exist, create it. 
             }
 
             return _instance;
         }
     }
 
-    public override void EnterState(AI _owner)
+    public override void EnterState(AI _owner) //This is performed once upon entering state. 
     {
         Debug.Log("Entering first state");
     }
 
-    public override void ExitState(AI _owner)
+    public override void ExitState(AI _owner) //this is performed once upon exiting state.
     {
         Debug.Log("Exiting first state");
     }
 
-    public override void UpdateState(AI _owner)
+    public override void UpdateState(AI _owner) //this is performed on update
     {
         if (_owner.switchState)
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using StateStuff;
 
-//Not a real ai just a timer to switch states. https://www.youtube.com/watch?v=PaLD1t-kIwM
+//Currently just a timer to switch states using a bool to switch between states every 5 seconds. 
 public class AI : MonoBehaviour
 {
     public bool switchState = false;
@@ -16,42 +16,31 @@ public class AI : MonoBehaviour
 
     public StateMachine<AI> stateMachine { get; set; }
 
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.GetComponent<EdgeCollider2D>())
-    //    {
-    //        float z = Mathf.Atan2((_owner.player.transform.position.y - _owner.transform.position.y), (_owner.player.transform.position.x - _owner.transform.position.x)) * Mathf.Rad2Deg - 90;
-
-    //        _owner.transform.eulerAngles = new Vector3(0, 0, z);
-
-    //        _owner.rb.AddForce(_owner.gameObject.transform.up * _owner.speed);
-    //    }
-    //}
 
     private void Start()
     {
         stateMachine = new StateMachine<AI>(this);
-        stateMachine.ChangeState(FirstState.Instance);
+        stateMachine.ChangeState(FirstState.Instance); // use instance that already exists.
         gameTimer = Time.time;
         rb = GetComponent<Rigidbody2D>();
         
     }
 
-    private void Update()
+    private void Update() //Used to switch between states and call the statemachine update. 
     {
         if (Time.time > gameTimer + 1)
         {
             gameTimer = Time.time;
             seconds++;
-            Debug.Log(seconds);
+            Debug.Log(seconds); //log for testing. 
         }
 
         if (seconds == 5)
         {
-            seconds = 0;
-            switchState = !switchState;
+            seconds = 0; //reset seconds. 
+            switchState = !switchState; //switch the state to the opposite state. 
         }
 
-        stateMachine.Update();
+        stateMachine.Update(); //when update is called on ai it will call update in the state. 
     }
 }
