@@ -20,6 +20,15 @@ public class PauseOnButtonPress : MonoBehaviour
         {
             isShowing = !isShowing;
             PauseMenuPanel.SetActive(isShowing);
+            if (isShowing == true)
+            {
+                Time.timeScale = 0;
+            }
+            else
+            {
+                Time.timeScale = 1;
+            }
+           
         }
     }
 }
