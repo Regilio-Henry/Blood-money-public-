@@ -9,5 +9,6 @@ public class ContinueScript : MonoBehaviour
     {
         PauseOnButtonPress.isShowing = false;
         PauseMenuPanel.SetActive(PauseOnButtonPress.isShowing);
+        Time.timeScale = 1;
     }
 }
