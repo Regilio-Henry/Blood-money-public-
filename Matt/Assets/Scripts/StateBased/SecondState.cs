@@ -42,10 +42,23 @@ public class SecondState : State<AI>
 
     public override void UpdateState(AI _owner)
     {
-        if (!_owner.switchState)
+        switch (_owner.state)
         {
-            _owner.stateMachine.ChangeState(FirstState.Instance);
-        }
+            case AI.State.Flee:
+                break;
+
+            case AI.State.Approach:
+                _owner.stateMachine.ChangeState(FirstState.Instance);
+                break;
+
+            case AI.State.Fight:
+                _owner.stateMachine.ChangeState(ThirdState.Instance);
+                break;
+
+            default:
+                Debug.Log("State Not Found");
+                break;
+        };
         float z = Mathf.Atan2((_owner.player.transform.position.y - _owner.transform.position.y), (_owner.player.transform.position.x - _owner.transform.position.x)) * Mathf.Rad2Deg + 90;
 
         _owner.transform.eulerAngles = new Vector3(0, 0, z);

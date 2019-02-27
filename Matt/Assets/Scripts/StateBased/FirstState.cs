@@ -7,15 +7,15 @@ public class FirstState : State<AI>  //removed monobehavior, using statestuff, A
 {
     private static FirstState _instance; //only declared one time. can only be created from within the state class. 
 
-    private FirstState() 
+    private FirstState()
     {
         if (_instance != null)
         {
             return;
         }
-    
 
-        _instance = this; 
+
+        _instance = this;
     }
 
     public static FirstState Instance
@@ -43,10 +43,26 @@ public class FirstState : State<AI>  //removed monobehavior, using statestuff, A
 
     public override void UpdateState(AI _owner) //this is performed on update
     {
-        if (_owner.switchState)
+        Debug.Log(_owner.state);
+        switch (_owner.state)
         {
-            _owner.stateMachine.ChangeState(SecondState.Instance);
-        }
+            case AI.State.Flee:
+                _owner.stateMachine.ChangeState(SecondState.Instance);
+                break;
+
+            case AI.State.Approach:
+                break;
+
+            case AI.State.Fight:
+                _owner.stateMachine.ChangeState(ThirdState.Instance);
+                break;
+
+            default:
+                Debug.Log("State Not Found");
+                break;
+        };
+
+
         float z = Mathf.Atan2((_owner.player.transform.position.y - _owner.transform.position.y), (_owner.player.transform.position.x - _owner.transform.position.x)) * Mathf.Rad2Deg - 90;
 
         _owner.transform.eulerAngles = new Vector3(0, 0, z);

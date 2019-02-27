@@ -23809,6 +23809,11 @@ If the Unity Editor setting "Auto-Update" is set to enabled, editing a script ou
       <param name="brushTarget">Target of the GridBrushBase.Tool operation. By default the currently selected GameObject.</param>
       <param name="tool">Current GridBrushBase.Tool selected.</param>
     </member>
+    <member name="T:UnityEditor.GridPaintSortingAttribute">
+      <summary>
+        <para>Use this attribute to add an option to customize the sorting of Active Targets in the Active Tilemap list of the Tile Palette window.</para>
+      </summary>
+    </member>
     <member name="T:UnityEditor.GridPalette">
       <summary>
         <para>GridPalette stores settings for Palette assets when shown in the Palette window.</para>

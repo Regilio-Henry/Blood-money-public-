@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace StateStuff // could be System.Serializable or namespace so is viewable in unity as its not a Monobehaviour.
 {
-    
+
     public class StateMachine<T>  //other files not just AI can use the state machine 
     {
         public State<T> currentState { get; private set; } //doesnt declare previous or future states
@@ -18,7 +18,7 @@ namespace StateStuff // could be System.Serializable or namespace so is viewable
 
         public void ChangeState(State<T> _newstate) //how machine goes through states.
         {
-            if (currentState != null)   
+            if (currentState != null)
                 currentState.ExitState(Owner);
             currentState = _newstate;
             currentState.EnterState(Owner);
