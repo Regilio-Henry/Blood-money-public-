@@ -17,6 +17,7 @@ public class AI : MonoBehaviour
     public bool rayTest = false; //bool for raycast to see if target is within range to enter attackstate
     public float TargetDistance;
 
+   
 
     public StateMachine<AI> stateMachine { get; set; }
 
@@ -61,11 +62,13 @@ public class AI : MonoBehaviour
         }
     }
 
+    
+
     private void Update() //Used to switch between states and call the statemachine update. 
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
         Raycasting();
-
+         
 
 
         if (distance < 5 && distance > 2)
@@ -79,7 +82,7 @@ public class AI : MonoBehaviour
         }
         if (distance <= 2)
         {
-            state = State.Fight;
+            state = State.Fight; //fight = third state
         }
 
         stateMachine.Update(); //when update is called on ai it will call update in the state. 

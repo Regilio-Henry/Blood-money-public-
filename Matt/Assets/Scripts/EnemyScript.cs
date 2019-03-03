@@ -20,6 +20,9 @@ public class EnemyScript : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, z);
 
         rb.AddForce(gameObject.transform.up * speed);
+
+        
+
     }
 
 }

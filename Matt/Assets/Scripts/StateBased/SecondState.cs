@@ -63,6 +63,10 @@ public class SecondState : State<AI>
 
         _owner.transform.eulerAngles = new Vector3(0, 0, z);
 
+        //_owner.transform.localEulerAngles = _owner.transform.eulerAngles + Vector3.forward(0, 190, -2 * _owner.transform.eulerAngles.z);
+
         _owner.rb.AddForce(_owner.gameObject.transform.up * _owner.speed);
+
+        //_owner.transform.Rotate((Vector3.forward * Time.deltaTime) * 1000);
     }
 }
