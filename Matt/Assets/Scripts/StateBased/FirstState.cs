@@ -62,11 +62,13 @@ public class FirstState : State<AI>  //removed monobehavior, using statestuff, A
                 break;
         };
 
-
         float z = Mathf.Atan2((_owner.player.transform.position.y - _owner.transform.position.y), (_owner.player.transform.position.x - _owner.transform.position.x)) * Mathf.Rad2Deg - 90;
 
         _owner.transform.eulerAngles = new Vector3(0, 0, z);
 
         _owner.rb.AddForce(_owner.gameObject.transform.up * _owner.speed);
+
+        
+
     }
 }
