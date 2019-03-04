@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5694895938540055680}
-  - component: {fileID: 5694895938540055695}
   - component: {fileID: 5694895938540055694}
   - component: {fileID: 1479205689389394134}
   - component: {fileID: 366447002726820446}
+  - component: {fileID: 536863902997532013}
+  - component: {fileID: 8934613250794463130}
   m_Layer: 0
   m_Name: SpiderWebAttack
   m_TagString: Untagged
@@ -27,32 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5694895938540055693}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.7759783, y: 2.777191, z: 0}
   m_LocalScale: {x: 0.3006, y: 0.3006, z: 1.2024}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5694895938540055695
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5694895938540055693}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 82629073a9a2b3f43a4771f075b24e7b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!212 &5694895938540055694
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -116,7 +98,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -229,3 +211,34 @@ PolygonCollider2D:
       - {x: -0.01, y: 0.265}
       - {x: 0.089999996, y: 0.315}
       - {x: 0.089999996, y: 0.39499998}
+--- !u!114 &536863902997532013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5694895938540055693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1888bbd8d9593284aaede4000e796e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletForce: 250
+--- !u!114 &8934613250794463130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5694895938540055693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eae1db258517d24d9595bbf037d5e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 5694895938540055680}
+  colissionRadius: 0.4
+  collided: 0
+  whatToCollideWith:
+    serializedVersion: 2
+    m_Bits: 256
