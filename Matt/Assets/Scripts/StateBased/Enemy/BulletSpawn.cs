@@ -24,7 +24,7 @@ public class BulletSpawn : MonoBehaviour
             seconds++;
         }
 
-        if (seconds == 5)
+        if (seconds == 3)
         {
             Instantiate(SpiderWebAttack, SpawnPointWeb.position, SpawnPointWeb.rotation);
             seconds = 0;
