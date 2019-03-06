@@ -10,6 +10,12 @@ public class PlayerController : MonoBehaviour
     GameObject DashOb;
     TrailRenderer DashTrail;
 
+    CapsuleCollider2D UHB;
+    CapsuleCollider2D DHB;
+    CapsuleCollider2D LHB;
+    CapsuleCollider2D RHB;
+
+
     float horizontal;
     float vertical;
 
@@ -35,6 +41,20 @@ public class PlayerController : MonoBehaviour
 
         DashOb = GameObject.Find("Trail");
         DashTrail = DashOb.GetComponent<TrailRenderer>();
+
+
+        UHB = GameObject.Find("UpHitBox").GetComponent<CapsuleCollider2D>();
+        UHB.enabled = false;
+
+        DHB = GameObject.Find("DownHitBox").GetComponent<CapsuleCollider2D>();
+        DHB.enabled = false;
+
+        LHB = GameObject.Find("LeftHitBox").GetComponent<CapsuleCollider2D>();
+        LHB.enabled = false;
+
+        RHB = GameObject.Find("RightHitBox").GetComponent<CapsuleCollider2D>();
+        RHB.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -44,8 +64,6 @@ public class PlayerController : MonoBehaviour
         HandleMovement();
         HandleMelee();
     }
-
-
 
     private void HandleMovement()
     {
@@ -107,16 +125,43 @@ public class PlayerController : MonoBehaviour
     {
         DashTrail.emitting = false;
     }
+    public void EndAttack()
+    {
+        UHB.enabled = false;
+        DHB.enabled = false;
+        LHB.enabled = false;
+        RHB.enabled = false;
+
+    }
 
     private void HandleMelee()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Joystick1Button0)) // if the left mouse button or A button on the Xbox controller is pressed then set the attacking bool to true
         {
             animator.SetBool("Attacking", true); // set the bool to true so it will play the attacking animation
+
+            if (animator.GetInteger("dir") == 0)//Up
+            {
+                UHB.enabled = true;
+            }
+            if (animator.GetInteger("dir") == 2)//Down
+            {
+                DHB.enabled = true;
+            }
+            if (animator.GetInteger("dir") == 3)//left
+            {
+                LHB.enabled = true;
+            }
+            if (animator.GetInteger("dir") == 1)//Right
+            {
+                RHB.enabled = true;
+            }
+
+            Invoke("EndAttack", .3f);
         }
         else
         {
-            animator.SetBool("Attacking", false);// set the bool to false if the above if statement doesnt return true. this stops the attacking animation fron being played to many times
+            animator.SetBool("Attacking", false);// set the bool to false if the above if statement doesnt return true. this stops the attacking animation fron being played to many times=
         }
 /*
         if (Input.GetKeyDown(KeyCode.Mouse1) || Input.GetKeyDown(KeyCode.Joystick1Button2))// if the righ mouse button or X button on the Xbox controller is pressed then set the blocking bool to true
