@@ -901,7 +901,7 @@ MonoBehaviour:
   gameTimer: 0
   seconds: 0
   enemy: {fileID: 521339629}
-  speed: 15
+  speed: 5
   player: {fileID: 1357685222}
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
@@ -1388,7 +1388,7 @@ MonoBehaviour:
   gameTimer: 0
   seconds: 0
   enemy: {fileID: 844226145}
-  speed: 15
+  speed: 5
   player: {fileID: 1357685222}
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
@@ -1719,7 +1719,7 @@ MonoBehaviour:
   gameTimer: 0
   seconds: 0
   enemy: {fileID: 1175925644}
-  speed: 15
+  speed: 5
   player: {fileID: 1357685222}
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
@@ -1968,7 +1968,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.003166914, y: 0.031668186}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1979,7 +1979,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 0.28511214, y: 0.45611954}
   m_EdgeRadius: 0
 --- !u!212 &1192028849
 SpriteRenderer:
@@ -21184,7 +21184,7 @@ MonoBehaviour:
   gameTimer: 0
   seconds: 0
   enemy: {fileID: 1488238524}
-  speed: 15
+  speed: 5
   player: {fileID: 1357685222}
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
@@ -22013,7 +22013,7 @@ MonoBehaviour:
   gameTimer: 0
   seconds: 0
   enemy: {fileID: 2056855331}
-  speed: 15
+  speed: 5
   player: {fileID: 1357685222}
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
