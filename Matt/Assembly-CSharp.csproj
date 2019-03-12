@@ -96,6 +96,7 @@
     <Compile Include="Assets\Scripts\StateBased\Zombie\SecondState.cs" />
     <Compile Include="Assets\Scripts\StateBased\Zombie\ThirdState.cs" />
     <Compile Include="Assets\Scripts\SwordDamage.cs" />
+    <Compile Include="Assets\Scripts\UI\Timer.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Jason/Documents/GitHub/BloodMoney/Matt/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
