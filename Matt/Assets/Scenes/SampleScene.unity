@@ -21593,6 +21593,7 @@ GameObject:
   - component: {fileID: 1710118255}
   - component: {fileID: 1710118254}
   - component: {fileID: 1710118256}
+  - component: {fileID: 1710118257}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -21651,6 +21652,18 @@ MonoBehaviour:
   healthContainer: {fileID: 1888870085}
   healthSlot: {fileID: 654101305267656334, guid: a22bd99c78f13e642822c7c3e3384a94,
     type: 3}
+--- !u!114 &1710118257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710118253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac475b48b7225ac49b935a35051d765b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1760431548
 GameObject:
   m_ObjectHideFlags: 0
