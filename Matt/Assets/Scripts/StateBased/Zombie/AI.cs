@@ -11,9 +11,9 @@ public class AI : MonoBehaviour
     public int seconds = 0;
     public Transform enemy;
     public float speed;
-    public Transform player, sightStart, sightEnd;
+    public Transform sightStart, sightEnd;
     public Rigidbody2D rb;
-
+    public GameObject player;
     public bool rayTest = false; //bool for raycast to see if target is within range to enter attackstate
     public float TargetDistance;
 
@@ -38,6 +38,7 @@ public class AI : MonoBehaviour
         stateMachine.ChangeState(FirstState.Instance); // use instance that already exists.
         gameTimer = Time.time;
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
         distance = Vector2.Distance(transform.position, player.transform.position);
 
     }
@@ -46,7 +47,7 @@ public class AI : MonoBehaviour
     {
         // Debug.DrawLine(transform.position, player.position, Color.red); //just draws a line between sightStart object and sightEnd object.
 
-        Vector2 direction = player.position - transform.position; //subtract origin from target to get direction
+        Vector2 direction = player.transform.position - transform.position; //subtract origin from target to get direction
         Debug.DrawRay(transform.position, direction, Color.green);
         LayerMask playerMask = LayerMask.GetMask("Player");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, distance, playerMask);
