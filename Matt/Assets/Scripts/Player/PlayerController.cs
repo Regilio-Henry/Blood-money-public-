@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     TrailRenderer DashTrail;
 
+    GameObject SpellAttack;
+    Animator SpellAnimator;
+
     [SerializeField]
     float Speed = 5;
 
@@ -22,7 +25,9 @@ public class PlayerController : MonoBehaviour
     float AttackRate = .3f;
     private float NextAttack;
 
-    
+    [SerializeField]
+    float SpellAttackRate = 1f;
+    private float NextSpell;
 
     public ScreenShake screenShake;
     [SerializeField]
@@ -40,6 +45,8 @@ public class PlayerController : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         DashTrail = GameObject.Find("DashTrail").GetComponent<TrailRenderer>();
+        SpellAttack = GameObject.Find("SpellAttackCrontroller");
+        SpellAnimator = SpellAttack.GetComponent<Animator>();
     }
 
         // Update is called once per frame
@@ -83,10 +90,29 @@ public class PlayerController : MonoBehaviour
 
     void HandleAttack()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextAttack)
+        if (Input.GetKey(KeyCode.LeftShift))//if the user is holding down shift, do a ranged attack
         {
-            NextAttack = Time.time + AttackRate;
-            animator.SetTrigger("Attack");
+            if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextSpell)
+            {
+                Vector3 AttackPos;
+                AttackPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                AttackPos.z = 0;
+                AttackPos.y += 2.0f;
+                SpellAttack.transform.position = AttackPos;
+
+                SpellAnimator.SetTrigger("Lightning");
+
+                NextSpell = Time.time + SpellAttackRate;
+
+            }
+        }
+        else // if the user isnt holding down shift, do a normal melee attack
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextAttack)
+            {
+                NextAttack = Time.time + AttackRate;
+                animator.SetTrigger("Attack");
+            }
         }
     }
 }
