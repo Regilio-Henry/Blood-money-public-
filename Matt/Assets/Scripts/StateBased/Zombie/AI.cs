@@ -17,7 +17,7 @@ public class AI : MonoBehaviour
     public bool rayTest = false; //bool for raycast to see if target is within range to enter attackstate
     public float TargetDistance;
 
-   
+    EnemyHealth enemyHealth; //Starting testing for adding hp. calls the EnemyHealth script. 
 
     public StateMachine<AI> stateMachine { get; set; }
 
@@ -40,7 +40,7 @@ public class AI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
         distance = Vector2.Distance(transform.position, player.transform.position);
-
+        enemyHealth = GetComponent<EnemyHealth>();  //Gets the compnonent for enemy health. 
     }
 
     void Raycasting()
