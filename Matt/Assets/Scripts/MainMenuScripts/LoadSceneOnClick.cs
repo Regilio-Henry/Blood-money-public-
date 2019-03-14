@@ -5,9 +5,17 @@ using UnityEditor.SceneManagement;
 
 public class LoadSceneOnClick : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Animator animator;
+    private int SceneIndex;
     public void LoadByIndex(int sceneIndex)
     {
-        EditorSceneManager.LoadScene(sceneIndex);
+        animator.SetTrigger("FadeOut");
+        SceneIndex = sceneIndex;
+        Invoke("OnFadeComplete", 1.0f);
+    }
+
+    public void OnFadeComplete()
+    {
+        EditorSceneManager.LoadScene(SceneIndex);
     }
 }
