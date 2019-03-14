@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EndCredits : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     [SerializeField]
     public float TimeToSkip;
     [SerializeField]
@@ -14,23 +14,27 @@ public class EndCredits : MonoBehaviour
 
     float skipTimer = 0f;
     public Animator animator;
+    bool StopUnfilling = false;
 
-    private void Start()
+    private void Start()// Start is called before the first frame update
     {
         FillImg = GameObject.Find("HoldFiller").GetComponent<Image>();
         TimeToSkip = 1;
     }
-    void Update()
+
+
+    void Update()    // Update is called once per frame
     {
-        
+
         if (FillImg.fillAmount != 0 && !(Input.GetKey(KeyCode.Space)))
         {
-            FillImg.fillAmount -= Time.deltaTime;
-            skipTimer -= Time.deltaTime;
-            Debug.Log(skipTimer);
-            Debug.Log(FillImg.fillAmount);
+            if (!StopUnfilling)
+            {
+                FillImg.fillAmount -= Time.deltaTime;
+                skipTimer -= Time.deltaTime;
+            }
         }
-        
+
         if (Input.GetKey(KeyCode.Space))
         {
             skipTimer += Time.deltaTime;
@@ -38,18 +42,21 @@ public class EndCredits : MonoBehaviour
             if (skipTimer > TimeToSkip)
             {
                 FadeOut();
+                StopUnfilling = true;
+
             }
 
             FillImg.fillAmount = skipTimer / TimeToSkip;
         }
     }
 
-    // Update is called once per frame
+
     public void FadeOut()
     {
         animator.SetTrigger("FadeOut");
         Invoke("EndCred", 1.0f);
     }
+
     public void EndCred()
     {
         SceneManager.LoadScene(0);
