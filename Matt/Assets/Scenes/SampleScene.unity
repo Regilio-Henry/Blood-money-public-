@@ -21254,7 +21254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
-  - {fileID: 5864544793385314213, guid: 943a9089d3d037f4688065fadce1e423, type: 3}
+  - {fileID: 5332258572123333853, guid: f959a9cdc62c5e74cacdeb4229c75eed, type: 3}
   - {fileID: 2351383696908926807, guid: 000330ec9554e18448936911e6fa5510, type: 3}
   spawnTime: 1
   spawnPoints:

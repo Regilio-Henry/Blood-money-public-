@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (isDead)
         {
-            destory.gameObject;
+            Destroy(this);
         }
     }
 
