@@ -1679,7 +1679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1208219972
 Transform:
   m_ObjectHideFlags: 0
@@ -21049,6 +21049,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1633062413649998677, guid: 4f54087964ab29f45be111b848876501,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1633062413649998665, guid: 4f54087964ab29f45be111b848876501,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21114,6 +21119,16 @@ PrefabInstance:
       propertyPath: DashDistance
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1633062413649998664, guid: 4f54087964ab29f45be111b848876501,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1000000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1633062413649998664, guid: 4f54087964ab29f45be111b848876501,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f54087964ab29f45be111b848876501, type: 3}
 --- !u!1 &1683015262
@@ -21157,6 +21172,47 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1679353496}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &1701462393
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701462392}
+  m_Enabled: 1
+  m_Density: 500
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.012000591, y: 0.005007118}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.84, y: 0.84}
+    newSize: {x: 0.84, y: 0.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4214, y: 0.8795477}
+  m_EdgeRadius: 0
+--- !u!114 &1701462395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701462392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339ba431fe69bf5458c6f96126315d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalHealth: 3
+  healthContainer: {fileID: 1888870085}
+  healthSlot: {fileID: 0}
 --- !u!1 &1710118253
 GameObject:
   m_ObjectHideFlags: 0

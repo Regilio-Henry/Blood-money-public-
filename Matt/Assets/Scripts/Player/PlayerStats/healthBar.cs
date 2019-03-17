@@ -17,14 +17,15 @@ public class healthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = totalHealth;
+        currentHealth = totalHealth;       
         for (int i = 0; i < totalHealth; i++)
         {
             var slot = Instantiate(healthSlot);
             slot.transform.parent = healthContainer;
             healthSlots.Add(slot);
         }
-        ChangeHealth(-1.5f);
+        //ChangeHealth(-1.5f);
+        
     }
 
 
@@ -35,6 +36,13 @@ public class healthBar : MonoBehaviour
         UpdateHealth();
     }
 
+    void OnTriggerStay2D(Collider2D col) //On collision with an object with the EnemyAttack tag it will reduce the hp of the player.
+    {
+        if (col.gameObject.tag == "EnemyAttack")
+        {
+            ChangeHealth(-0.5f);
+        }
+    }
 
     //Updates the ui health
     public void UpdateHealth()
@@ -81,6 +89,12 @@ public class healthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(currentHealth);
+        Debug.Log(currentHealth);
+        //print(currentHealth);
+        if (currentHealth <= 0) //if the players health is 0 it will destroy the player. 
+        {
+            Debug.Log("You died");
+            Destroy(this.gameObject);
+        }
     }
 }

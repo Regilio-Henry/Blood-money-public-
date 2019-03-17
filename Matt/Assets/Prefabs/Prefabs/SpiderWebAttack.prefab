@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8934613250794463130}
   m_Layer: 0
   m_Name: SpiderWebAttack
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,8 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 5694895938540055680}
-  colissionRadius: 0.4
+  colissionRadius: 0.001
   collided: 0
   whatToCollideWith:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
