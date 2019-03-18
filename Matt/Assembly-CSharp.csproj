@@ -65,10 +65,24 @@
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Camera\ScreenShake.cs" />
     <Compile Include="Assets\Scripts\EndCredits.cs" />
-    <Compile Include="Assets\Scripts\EnemyScript.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyAssets\BulletDestroy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyAssets\BulletFire.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyAssets\BulletSpawn.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyAssets\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Spider\ApproachState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Spider\AttackState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Spider\FleeState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Spider\SpiderAI.cs" />
+    <Compile Include="Assets\Scripts\Enemy\StateMachine.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Zombie\AI.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Zombie\FirstState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Zombie\SecondState.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Zombie\ThirdState.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\Scripts\EnemyTest.cs" />
     <Compile Include="Assets\Scripts\FPSDisplay.cs" />
+    <Compile Include="Assets\Scripts\Legacy\EnemyScript.cs" />
+    <Compile Include="Assets\Scripts\Legacy\EnemyTest.cs" />
+    <Compile Include="Assets\Scripts\Legacy\SwordDamage.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\LoadSceneOnClick.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\QuitOnClick.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\SelectOnInput.cs" />
@@ -85,20 +99,6 @@
     <Compile Include="Assets\Scripts\Player\PlayerStats\skillNode.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats\skillTree.cs" />
     <Compile Include="Assets\Scripts\PlayerMobility.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Enemy\BulletDestroy.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Enemy\BulletFire.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Enemy\BulletSpawn.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Enemy\EnemyHealth.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Spider\ApproachState.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Spider\AttackState.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Spider\FleeState.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Spider\SpiderAI.cs" />
-    <Compile Include="Assets\Scripts\StateBased\StateMachine.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Zombie\AI.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Zombie\FirstState.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Zombie\SecondState.cs" />
-    <Compile Include="Assets\Scripts\StateBased\Zombie\ThirdState.cs" />
-    <Compile Include="Assets\Scripts\SwordDamage.cs" />
     <Compile Include="Assets\Scripts\UI\Timer.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Jason/Documents/GitHub/BloodMoney/Matt/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
@@ -316,9 +316,6 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.8f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>C:/Users/Jason/Documents/GitHub/BloodMoney/Matt/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>C:/Users/Jason/Documents/GitHub/BloodMoney/Matt/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -327,9 +324,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/Jason/Documents/GitHub/BloodMoney/Matt/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/Jason/Documents/GitHub/BloodMoney/Matt/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.8f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
