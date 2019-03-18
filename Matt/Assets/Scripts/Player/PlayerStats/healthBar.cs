@@ -21,7 +21,8 @@ public class healthBar : MonoBehaviour
         for (int i = 0; i < totalHealth; i++)
         {
             var slot = Instantiate(healthSlot);
-            slot.transform.parent = healthContainer;
+
+            slot.transform.SetParent(healthContainer);
             healthSlots.Add(slot);
         }
         //ChangeHealth(-1.5f);
@@ -89,8 +90,7 @@ public class healthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(currentHealth);
-        //print(currentHealth);
+       // Debug.Log(currentHealth);
         if (currentHealth <= 0) //if the players health is 0 it will destroy the player. 
         {
             Debug.Log("You died");
