@@ -1691,9 +1691,10 @@ GameObject:
   - component: {fileID: 521339625}
   - component: {fileID: 521339624}
   - component: {fileID: 521339623}
+  - component: {fileID: 521339630}
   m_Layer: 0
   m_Name: SkeletonAnimated (2)
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1865,6 +1866,32 @@ Transform:
   m_Father: {fileID: 1683015263}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.078}
+--- !u!61 &521339630
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521339622}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.01, y: 0.88}
+    newSize: {x: 1.01, y: 0.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 0.88}
+  m_EdgeRadius: 0
 --- !u!1 &600115844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,9 +2947,10 @@ GameObject:
   - component: {fileID: 1175925640}
   - component: {fileID: 1175925639}
   - component: {fileID: 1175925638}
+  - component: {fileID: 1175925645}
   m_Layer: 0
   m_Name: SkeletonAnimated (3)
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3094,6 +3122,32 @@ Transform:
   m_Father: {fileID: 1683015263}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.078}
+--- !u!61 &1175925645
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175925637}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.01, y: 0.88}
+    newSize: {x: 1.01, y: 0.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 0.88}
+  m_EdgeRadius: 0
 --- !u!4 &1192028851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5332258572123333829, guid: f959a9cdc62c5e74cacdeb4229c75eed,
@@ -22672,9 +22726,10 @@ GameObject:
   - component: {fileID: 1488238520}
   - component: {fileID: 1488238519}
   - component: {fileID: 1488238518}
+  - component: {fileID: 1488238525}
   m_Layer: 0
   m_Name: SkeletonAnimated (1)
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22846,6 +22901,32 @@ Transform:
   m_Father: {fileID: 1683015263}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.078}
+--- !u!61 &1488238525
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488238517}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.01, y: 0.88}
+    newSize: {x: 1.01, y: 0.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 0.88}
+  m_EdgeRadius: 0
 --- !u!1 &1577147005
 GameObject:
   m_ObjectHideFlags: 0
@@ -23834,6 +23915,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1868613692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2351383696908926807, guid: 000330ec9554e18448936911e6fa5510,
+    type: 3}
+  m_PrefabInstance: {fileID: 2351383696670941449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1868613700
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868613692}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.01, y: 0.88}
+    newSize: {x: 1.01, y: 0.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 0.88}
+  m_EdgeRadius: 0
 --- !u!1 &1873294486
 GameObject:
   m_ObjectHideFlags: 0
@@ -24358,9 +24471,10 @@ GameObject:
   - component: {fileID: 2056855327}
   - component: {fileID: 2056855326}
   - component: {fileID: 2056855325}
+  - component: {fileID: 2056855332}
   m_Layer: 0
   m_Name: SkeletonAnimated (4)
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24532,6 +24646,32 @@ Transform:
   m_Father: {fileID: 1683015263}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.078}
+--- !u!61 &2056855332
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056855324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.01, y: 0.88}
+    newSize: {x: 1.01, y: 0.88}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.01, y: 0.88}
+  m_EdgeRadius: 0
 --- !u!1 &2097166670
 GameObject:
   m_ObjectHideFlags: 0
@@ -24674,6 +24814,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SkeletonAnimated
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351383696908926807, guid: 000330ec9554e18448936911e6fa5510,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2351383696908926824, guid: 000330ec9554e18448936911e6fa5510,
         type: 3}

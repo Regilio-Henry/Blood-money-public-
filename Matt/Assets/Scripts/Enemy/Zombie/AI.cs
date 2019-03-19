@@ -73,16 +73,16 @@ public class AI : MonoBehaviour
 
 
         
-        if (distance > 5)
+        if (distance > 1.5)
         {
             state = State.Approach; //approach = first state 
         }
-        if (distance < 3 && distance > 2)
+        /*if (distance < 3 && distance > 2)
         {
             state = State.Flee; //flee = second state
             //Debug.Log("State Change");
-        }
-        if (distance <= 2)
+        }*/
+        if (distance <= 1.5)
         {
             state = State.Fight; //fight = third state
         }
