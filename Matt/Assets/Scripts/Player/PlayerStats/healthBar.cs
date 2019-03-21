@@ -14,7 +14,16 @@ public class healthBar : MonoBehaviour
     float currentAmount;
 
     public float IFrameTime = 1.0f;
+    SpriteRenderer player;
     float NextHit;
+
+    /*
+    public float IFramesTimer;
+    float FlickerRate = .1f;
+   
+    float flickerTimer = .0f;  */
+
+
 
 
     // Start is called before the first frame update
@@ -29,7 +38,9 @@ public class healthBar : MonoBehaviour
             healthSlots.Add(slot);
         }
         //ChangeHealth(-1.5f);
-        
+
+        player = GetComponent<SpriteRenderer>();
+
     }
 
 
@@ -46,9 +57,14 @@ public class healthBar : MonoBehaviour
         {
             NextHit = Time.time + IFrameTime;
             ChangeHealth(-0.5f);
+            InvokeRepeating("IFrames", 0, .1f);
         }
     }
 
+    void IFrames()
+    {
+        player.enabled = !player.enabled;
+    }
     //Updates the ui health
     public void UpdateHealth()
     {
@@ -99,6 +115,12 @@ public class healthBar : MonoBehaviour
         {
             Debug.Log("You died");
             Destroy(this.gameObject);
+        }
+
+        if (Time.time > NextHit)
+        {
+            CancelInvoke();
+            player.enabled = true;
         }
     }
 }
