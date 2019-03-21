@@ -13,6 +13,9 @@ public class healthBar : MonoBehaviour
     float currentHealth;
     float currentAmount;
 
+    public float IFrameTime = 1.0f;
+    float NextHit;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +42,9 @@ public class healthBar : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col) //On collision with an object with the EnemyAttack tag it will reduce the hp of the player.
     {
-        if (col.gameObject.tag == "EnemyAttack")
+        if (col.gameObject.tag == "EnemyAttack" && Time.time > NextHit)
         {
+            NextHit = Time.time + IFrameTime;
             ChangeHealth(-0.5f);
         }
     }
