@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleDodge()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > NextDash) // space and the B Button on the Xbox controller are used for the dash, could easily be changed
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > NextDash) // space and the B Button on the Xbox controller are used for the dash, could easily be changed
         {
             NextDash = Time.time + DashRate;
             //dash in the direction of movement
