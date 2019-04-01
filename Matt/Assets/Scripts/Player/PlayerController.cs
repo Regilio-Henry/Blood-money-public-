@@ -35,11 +35,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public float shakeDur = .15f;
 
+    [SerializeField]
+    GameObject gameController;
 
-    
-   
+    public delegate void playerEvents();
+    public static event playerEvents onDodge;
 
-   
+
+
+
 
     void Start()
     {
@@ -88,6 +92,11 @@ public class PlayerController : MonoBehaviour
             DashTrail.emitting = true;
             transform.position=(transform.position + new Vector3(Input.GetAxisRaw("Horizontal") * DashDistance, Input.GetAxisRaw("Vertical") * DashDistance)); //dash distance can be changed and will determine how far the dash goes
             StartCoroutine(screenShake.Shake(shakeDur, shakeMag));
+
+            if (onDodge != null)
+            {
+                onDodge();
+            }
 
             Invoke("EndTrail", .15f);
         }

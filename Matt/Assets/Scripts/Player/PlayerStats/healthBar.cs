@@ -13,18 +13,6 @@ public class healthBar : MonoBehaviour
     float currentHealth;
     float currentAmount;
 
-    public float IFrameTime = 1.0f;
-    SpriteRenderer player;
-    float NextHit;
-
-    /*
-    public float IFramesTimer;
-    float FlickerRate = .1f;
-   
-    float flickerTimer = .0f;  */
-
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -38,9 +26,7 @@ public class healthBar : MonoBehaviour
             healthSlots.Add(slot);
         }
         //ChangeHealth(-1.5f);
-
-        player = GetComponent<SpriteRenderer>();
-
+        
     }
 
 
@@ -53,18 +39,12 @@ public class healthBar : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col) //On collision with an object with the EnemyAttack tag it will reduce the hp of the player.
     {
-        if (col.gameObject.tag == "EnemyAttack" && Time.time > NextHit)
+        if (col.gameObject.tag == "EnemyAttack")
         {
-            NextHit = Time.time + IFrameTime;
             ChangeHealth(-0.5f);
-            InvokeRepeating("IFrames", 0, .1f);
         }
     }
 
-    void IFrames()
-    {
-        player.enabled = !player.enabled;
-    }
     //Updates the ui health
     public void UpdateHealth()
     {
@@ -115,12 +95,6 @@ public class healthBar : MonoBehaviour
         {
             Debug.Log("You died");
             Destroy(this.gameObject);
-        }
-
-        if (Time.time > NextHit)
-        {
-            CancelInvoke();
-            player.enabled = true;
         }
     }
 }

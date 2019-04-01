@@ -94,6 +94,9 @@
     <Compile Include="Assets\Scripts\PauseMenuScripts\ContinueScript.cs" />
     <Compile Include="Assets\Scripts\PauseMenuScripts\PauseOnButtonPress.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerStats\Challenge.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerStats\ChallengeBuilder.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerStats\ChallengeContainer.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats\healthBar.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats\playerStats.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats\skillNode.cs" />
