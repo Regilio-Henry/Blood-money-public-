@@ -66,7 +66,8 @@ public class FleeState : State<SpiderAI>
 
         //_owner.transform.localEulerAngles = _owner.transform.eulerAngles + Vector3.forward(0, 190, -2 * _owner.transform.eulerAngles.z);
 
-        _owner.rb.AddForce(_owner.gameObject.transform.up * _owner.speed);
+        _owner.transform.position = _owner.transform.position + _owner.gameObject.transform.up * _owner.speed * Time.deltaTime;
+      //  _owner.rb.AddForce(_owner.gameObject.transform.up * _owner.speed);
 
         //_owner.transform.Rotate((Vector3.forward * Time.deltaTime) * 1000);
     }

@@ -1097,7 +1097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.054541662, y: 0.2}
   m_AnchorMax: {x: 0.2765417, y: 0.68700004}
-  m_AnchoredPosition: {x: -4.4002686, y: 38.499985}
+  m_AnchoredPosition: {x: -4.3999023, y: 38.5}
   m_SizeDelta: {x: -91.099976, y: 913}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &319790193
@@ -1715,7 +1715,7 @@ MonoBehaviour:
   gameTimer: 0
   seconds: 0
   enemy: {fileID: 521339629}
-  speed: 5
+  speed: 4
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
   rb: {fileID: 0}
@@ -2642,6 +2642,7 @@ GameObject:
   - component: {fileID: 1026577722}
   - component: {fileID: 1026577723}
   - component: {fileID: 1026577721}
+  - component: {fileID: 1026577724}
   m_Layer: 0
   m_Name: TimerText
   m_TagString: Untagged
@@ -2725,6 +2726,21 @@ MonoBehaviour:
   TimerText: {fileID: 1026577721}
   minutes: 0
   seconds: 0
+--- !u!114 &1026577724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026577719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1037510470
 GameObject:
   m_ObjectHideFlags: 0
@@ -2971,7 +2987,7 @@ MonoBehaviour:
   gameTimer: 0
   seconds: 0
   enemy: {fileID: 1175925644}
-  speed: 5
+  speed: 4
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
   rb: {fileID: 0}
@@ -22750,7 +22766,7 @@ MonoBehaviour:
   gameTimer: 0
   seconds: 0
   enemy: {fileID: 1488238524}
-  speed: 5
+  speed: 3
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
   rb: {fileID: 0}
@@ -23441,6 +23457,7 @@ MonoBehaviour:
   healthContainer: {fileID: 1888870085}
   healthSlot: {fileID: 654101305267656334, guid: a22bd99c78f13e642822c7c3e3384a94,
     type: 3}
+  IFrameTime: 1
 --- !u!1 &1710118253
 GameObject:
   m_ObjectHideFlags: 0
@@ -24559,7 +24576,7 @@ MonoBehaviour:
   gameTimer: 0
   seconds: 0
   enemy: {fileID: 2056855331}
-  speed: 5
+  speed: 4
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
   rb: {fileID: 0}
@@ -24949,6 +24966,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1357685222}
+    - target: {fileID: 2351383696908926828, guid: 000330ec9554e18448936911e6fa5510,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 000330ec9554e18448936911e6fa5510, type: 3}
 --- !u!1 &2681741544094332484
@@ -28006,6 +28028,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1701462392}
+    - target: {fileID: 5332258572123333850, guid: f959a9cdc62c5e74cacdeb4229c75eed,
+        type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332258571769644112, guid: f959a9cdc62c5e74cacdeb4229c75eed,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f959a9cdc62c5e74cacdeb4229c75eed, type: 3}
 --- !u!1 &5869819420071449721

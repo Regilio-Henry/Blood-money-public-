@@ -182,7 +182,7 @@ MonoBehaviour:
   gameTimer: 0
   seconds: 0
   enemy: {fileID: 2351383696908926824}
-  speed: 5
+  speed: 4
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
   rb: {fileID: 0}

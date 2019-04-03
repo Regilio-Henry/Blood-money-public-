@@ -66,9 +66,11 @@ public class FirstState : State<AI>  //removed monobehavior, using statestuff, A
 
         _owner.transform.eulerAngles = new Vector3(0, 0, z);
 
-        _owner.rb.AddForce(_owner.gameObject.transform.up * _owner.speed);
+        _owner.transform.position = _owner.transform.position + _owner.gameObject.transform.up * _owner.speed * Time.deltaTime;
 
-        
+        // _owner.rb.AddForce(_owner.gameObject.transform.up * _owner.speed);
+
+
 
     }
 }

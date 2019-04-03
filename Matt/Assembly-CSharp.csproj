@@ -64,7 +64,6 @@
     <Compile Include="Assets\Scripts\AttackAnim.cs" />
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Camera\ScreenShake.cs" />
-    <Compile Include="Assets\Scripts\EndCredits.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAssets\BulletDestroy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAssets\BulletFire.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAssets\BulletSpawn.cs" />
@@ -79,7 +78,6 @@
     <Compile Include="Assets\Scripts\Enemy\Zombie\SecondState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Zombie\ThirdState.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
-    <Compile Include="Assets\Scripts\FPSDisplay.cs" />
     <Compile Include="Assets\Scripts\Legacy\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\Legacy\EnemyTest.cs" />
     <Compile Include="Assets\Scripts\Legacy\SwordDamage.cs" />
@@ -102,6 +100,8 @@
     <Compile Include="Assets\Scripts\Player\PlayerStats\skillNode.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats\skillTree.cs" />
     <Compile Include="Assets\Scripts\PlayerMobility.cs" />
+    <Compile Include="Assets\Scripts\UI\FillButton.cs" />
+    <Compile Include="Assets\Scripts\UI\FPSDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\Timer.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Jason/Documents/GitHub/BloodMoney/Matt/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

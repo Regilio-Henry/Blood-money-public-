@@ -66,7 +66,8 @@ public class ApproachState : State<SpiderAI>
 
         _owner.transform.eulerAngles = new Vector3(0, 0, z);
 
-        _owner.rb.AddForce(_owner.gameObject.transform.up * _owner.speed);
+      //  _owner.rb.AddForce(_owner.gameObject.transform.up * _owner.speed);
+        _owner.transform.position = _owner.transform.position + _owner.gameObject.transform.up * _owner.speed * Time.deltaTime;
 
 
 
