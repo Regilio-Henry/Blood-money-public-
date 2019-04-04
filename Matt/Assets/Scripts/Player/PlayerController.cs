@@ -25,9 +25,16 @@ public class PlayerController : MonoBehaviour
     float AttackRate = .3f;
     private float NextAttack;
 
+    public GameObject ArrowPreFab;
+    public Transform FirePoint;
+
     [SerializeField]
     float SpellAttackRate = 1f;
     private float NextSpell;
+
+    [SerializeField]
+    float RangedAttackRate = .5f;
+    private float NextRangedAttack;
 
     public ScreenShake screenShake;
     [SerializeField]
@@ -116,28 +123,36 @@ public class PlayerController : MonoBehaviour
 
     void HandleAttack()
     {
-        if (Input.GetKey(KeyCode.LeftShift))//if the user is holding down shift, do a ranged attack
+        if (Time.timeScale != 0)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextSpell)
+            if (Input.GetKey(KeyCode.LeftShift))//if the user is holding down shift, do a ranged attack
             {
-                Vector3 AttackPos;
-                AttackPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                AttackPos.z = 0;
-                AttackPos.y += 2.0f;
-                SpellAttack.transform.position = AttackPos;
+                if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextRangedAttack)
+                {
+                    NextRangedAttack = Time.time + RangedAttackRate;
+                    Instantiate(ArrowPreFab, FirePoint.position, FirePoint.rotation); //normal
+                }
+                else if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > NextSpell)
+                {
+                    Vector3 AttackPos;
+                    AttackPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    AttackPos.z = 0;
+                    AttackPos.y += 2.0f;
+                    SpellAttack.transform.position = AttackPos;
 
-                SpellAnimator.SetTrigger("Lightning");
+                    SpellAnimator.SetTrigger("Lightning");
 
-                NextSpell = Time.time + SpellAttackRate;
+                    NextSpell = Time.time + SpellAttackRate;
 
+                }
             }
-        }
-        else // if the user isnt holding down shift, do a normal melee attack
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextAttack)
+            else // if the user isnt holding down shift, do a normal melee attack
             {
-                NextAttack = Time.time + AttackRate;
-                animator.SetTrigger("Attack");
+                if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextAttack)
+                {
+                    NextAttack = Time.time + AttackRate;
+                    animator.SetTrigger("Attack");
+                }
             }
         }
     }

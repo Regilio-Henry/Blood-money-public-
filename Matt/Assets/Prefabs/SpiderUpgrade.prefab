@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 5332258572123333848}
   - component: {fileID: 5332258572123333851}
   - component: {fileID: 5332258572123333850}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpiderUpgrade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
