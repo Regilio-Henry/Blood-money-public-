@@ -64,42 +64,49 @@ public class PlayerController : MonoBehaviour
 
     void HandleMovement()
     {
-        if (!Input.GetKey(KeyCode.LeftShift))//only move if the player isnt holding shift
+        if (Time.timeScale != 0)
         {
-            movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0.0f);
+            if (!Input.GetKey(KeyCode.LeftShift))//only move if the player isnt holding shift
+            {
+                movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0.0f);
 
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
-            animator.SetFloat("Magnitude", movement.magnitude);
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
+                animator.SetFloat("Magnitude", movement.magnitude);
 
-            transform.position = transform.position + movement.normalized * Speed * Time.deltaTime;
-        }
-        else
-        {
-            animator.SetFloat("Horizontal", 0);
-            animator.SetFloat("Vertical", 0);
-            animator.SetFloat("Magnitude", 0);
-            animator.SetTrigger("ShiftHeld");
+                transform.position = transform.position + movement.normalized * Speed * Time.deltaTime;
+            }
+            else
+            {
+                animator.SetFloat("Horizontal", 0);
+                animator.SetFloat("Vertical", 0);
+                animator.SetFloat("Magnitude", 0);
+                animator.SetTrigger("ShiftHeld");
+            }
         }
     }
 
     void HandleDodge()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > NextDash) // space  used for the dash, could easily be changed
+        if(Time.timeScale != 0)
         {
-            NextDash = Time.time + DashRate;
-            //dash in the direction of movement
-            DashTrail.emitting = true;
-            transform.position=(transform.position + new Vector3(Input.GetAxisRaw("Horizontal") * DashDistance, Input.GetAxisRaw("Vertical") * DashDistance)); //dash distance can be changed and will determine how far the dash goes
-            StartCoroutine(screenShake.Shake(shakeDur, shakeMag));
-
-            if (onDodge != null)
+            if (Input.GetKeyDown(KeyCode.Space) && Time.time > NextDash && movement.magnitude != 0) // space  used for the dash, could easily be changed
             {
-                onDodge();
-            }
+                NextDash = Time.time + DashRate;
+                //dash in the direction of movement
+                DashTrail.emitting = true;
+                transform.position = (transform.position + new Vector3(Input.GetAxisRaw("Horizontal") * DashDistance, Input.GetAxisRaw("Vertical") * DashDistance)); //dash distance can be changed and will determine how far the dash goes
+                StartCoroutine(screenShake.Shake(shakeDur, shakeMag));
 
-            Invoke("EndTrail", .15f);
+                if (onDodge != null)
+                {
+                    onDodge();
+                }
+
+                Invoke("EndTrail", .15f);
+            }
         }
+
     }
 
     public void EndTrail()
