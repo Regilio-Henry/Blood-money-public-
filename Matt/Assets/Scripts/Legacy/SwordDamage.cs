@@ -6,7 +6,7 @@ public class SwordDamage : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag != "Wall")
-        Destroy(other.gameObject); 
+        if (other.gameObject.tag != "Wall" && other.gameObject.layer != 9)
+            Destroy(other.gameObject);
     }
 }
