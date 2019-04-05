@@ -9,9 +9,6 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     TrailRenderer DashTrail;
 
-    GameObject SpellAttack;
-    Animator SpellAnimator;
-
     [SerializeField]
     float Speed = 5;
 
@@ -24,6 +21,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float AttackRate = .3f;
     private float NextAttack;
+
+    public GameObject SpellAttackPreFab;
+    public Transform SpellAttackFirePoint;
 
     public GameObject ArrowPreFab;
     public Transform FirePoint;
@@ -56,8 +56,6 @@ public class PlayerController : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         DashTrail = GameObject.Find("DashTrail").GetComponent<TrailRenderer>();
-        SpellAttack = GameObject.Find("SpellAttackCrontroller");
-        SpellAnimator = SpellAttack.GetComponent<Animator>();
     }
 
         // Update is called once per frame
@@ -138,9 +136,10 @@ public class PlayerController : MonoBehaviour
                     AttackPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     AttackPos.z = 0;
                     AttackPos.y += 2.0f;
-                    SpellAttack.transform.position = AttackPos;
 
-                    SpellAnimator.SetTrigger("Lightning");
+                    SpellAttackFirePoint.transform.position = AttackPos;
+
+                    Instantiate(SpellAttackPreFab, SpellAttackFirePoint.position, SpellAttackFirePoint.rotation);
 
                     NextSpell = Time.time + SpellAttackRate;
 

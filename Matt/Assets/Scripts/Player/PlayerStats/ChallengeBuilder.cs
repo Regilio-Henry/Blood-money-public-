@@ -46,7 +46,8 @@ public class ChallengeBuilder : MonoBehaviour
 
             ChallengeNameText.text = ChallengeName;
             ChallengeDescriptionText.text = ChallengeDescriptionBuilder(c);
-            challengeInstance.transform.parent = challengeHolder.transform;
+            //challengeInstance.transform.parent = challengeHolder.transform;
+            challengeInstance.transform.SetParent(challengeHolder.transform);
         }
     }
 
