@@ -34,7 +34,7 @@ public class healthBar : MonoBehaviour
             slot.transform.SetParent(healthContainer);
             healthSlots.Add(slot);
         }
-        player = GetComponent<SpriteRenderer>();
+        player = GameObject.Find("Player").GetComponent<SpriteRenderer>();
     }
 
 
@@ -115,7 +115,7 @@ public class healthBar : MonoBehaviour
         if (currentHealth <= 0) //if the players health is 0 it will destroy the player. 
         {
             Debug.Log("You died");
-            Destroy(this.gameObject);
+            Destroy(GameObject.Find("Player"));
         }
     }
 }
