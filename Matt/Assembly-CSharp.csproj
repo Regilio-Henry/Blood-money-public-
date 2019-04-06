@@ -62,13 +62,13 @@
   <ItemGroup>
     <Compile Include="Assets\Dungeon Art Pack\AnimateSprite.cs" />
     <Compile Include="Assets\Scripts\AttackAnim.cs" />
-    <Compile Include="Assets\Scripts\BackGroundMusicFadeIn.cs" />
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Camera\ScreenShake.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAssets\BulletDestroy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAssets\BulletFire.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAssets\BulletSpawn.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyAssets\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Enemy\Spider\ApproachState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Spider\AttackState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Spider\FleeState.cs" />
@@ -78,13 +78,16 @@
     <Compile Include="Assets\Scripts\Enemy\Zombie\FirstState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Zombie\SecondState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Zombie\ThirdState.cs" />
-    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\Legacy\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\Legacy\EnemyTest.cs" />
     <Compile Include="Assets\Scripts\Legacy\SwordDamage.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\LoadSceneOnClick.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\QuitOnClick.cs" />
     <Compile Include="Assets\Scripts\MainMenuScripts\SelectOnInput.cs" />
+    <Compile Include="Assets\Scripts\Music\BackGroundMusicFadeIn.cs" />
+    <Compile Include="Assets\Scripts\Music\ChangeSong.cs" />
+    <Compile Include="Assets\Scripts\Music\SavePlayerPrefs.cs" />
+    <Compile Include="Assets\Scripts\Music\SetMasterVolume.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\debugPath.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\findPath.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\FollowPath.cs" />
@@ -107,6 +110,7 @@
     <Compile Include="Assets\Scripts\PressRToRestart.cs" />
     <Compile Include="Assets\Scripts\UI\FillButton.cs" />
     <Compile Include="Assets\Scripts\UI\FPSDisplay.cs" />
+    <Compile Include="Assets\Scripts\UI\SetSlider.cs" />
     <Compile Include="Assets\Scripts\UI\Timer.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Jason/Documents/GitHub/BloodMoney/Matt/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
