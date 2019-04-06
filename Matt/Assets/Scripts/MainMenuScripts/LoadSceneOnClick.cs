@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class LoadSceneOnClick : MonoBehaviour
 {
@@ -16,6 +16,6 @@ public class LoadSceneOnClick : MonoBehaviour
 
     public void OnFadeComplete()
     {
-        EditorSceneManager.LoadScene(SceneIndex);
+        SceneManager.LoadScene(SceneIndex);
     }
 }
