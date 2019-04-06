@@ -13,7 +13,7 @@ public class BackGroundMusicFadeIn : MonoBehaviour
 
     private void Awake()
     {
-        m_AudioSource = GetComponent<AudioSource>();
+        m_AudioSource = this.GetComponent<AudioSource>();
     }
 
 
