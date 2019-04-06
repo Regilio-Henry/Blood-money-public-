@@ -15,7 +15,7 @@ public class FollowPlayer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         Vector3 pos = Player.transform.position;
         pos.z = -20;
         transform.position = Vector3.SmoothDamp(transform.position, pos, ref velocity, FollowTime);

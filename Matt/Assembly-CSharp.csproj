@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerStats\skillTree.cs" />
     <Compile Include="Assets\Scripts\Player\stayOnPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerMobility.cs" />
+    <Compile Include="Assets\Scripts\PressRToRestart.cs" />
     <Compile Include="Assets\Scripts\UI\FillButton.cs" />
     <Compile Include="Assets\Scripts\UI\FPSDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\Timer.cs" />

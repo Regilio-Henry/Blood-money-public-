@@ -71,9 +71,6 @@ public class SpiderAI : MonoBehaviour
         distance = Vector2.Distance(transform.position, player.transform.position);
         Raycasting();
 
-
-
-
         if (distance > 7)
         {
             state = State.Approach; //approach = first state 
@@ -81,7 +78,7 @@ public class SpiderAI : MonoBehaviour
         if (distance < 3 && distance > 0)
         {
             state = State.Flee; //flee = second state
-            //Debug.Log("State Change");
+                                //Debug.Log("State Change");
         }
         if (distance <= 5 && distance >= 3)
         {
@@ -89,7 +86,5 @@ public class SpiderAI : MonoBehaviour
         }
 
         stateMachine.Update(); //when update is called on ai it will call update in the state. 
-
-
     }
 }

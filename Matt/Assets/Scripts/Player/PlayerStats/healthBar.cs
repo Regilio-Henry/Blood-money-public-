@@ -17,6 +17,7 @@ public class healthBar : MonoBehaviour
     SpriteRenderer player;
     float NextHit;
 
+    public GameObject deathmenu;
     /*
     public float IFramesTimer;
     float FlickerRate = .1f;
@@ -35,6 +36,7 @@ public class healthBar : MonoBehaviour
             healthSlots.Add(slot);
         }
         player = GameObject.Find("Player").GetComponent<SpriteRenderer>();
+        deathmenu.SetActive(false);
     }
 
 
@@ -114,8 +116,11 @@ public class healthBar : MonoBehaviour
        // Debug.Log(currentHealth);
         if (currentHealth <= 0) //if the players health is 0 it will destroy the player. 
         {
-            Debug.Log("You died");
-            Destroy(GameObject.Find("Player"));
+            //Debug.Log("You died");
+
+            deathmenu.SetActive(true);
+            GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
+            Time.timeScale = 0;
         }
     }
 }
