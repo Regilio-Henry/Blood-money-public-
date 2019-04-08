@@ -2,29 +2,56 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChallengeBuilder : MonoBehaviour
 {
     [SerializeField]
     public ChallengeContainer[] challenges;
-    public GameObject challengeHolder;
+    private GameObject challengeHolder;
     public GameObject challengePrefab;
     public Color completionColour;
+
+    private void Awake()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        DontDestroyOnLoad(gameObject);
+    }
+
+
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        print(scene.name);
+
+        if (scene.name == "SampleScene")
+        {
+            GetComponent<EnemySpawner>().enabled = true;
+        }
+    }
+
+    public void UpdateChallenge(GameObject ch)
+    {
+        challengeHolder = null;
+        challengeHolder = ch;
+        UpdateChallenges();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        UpdateChallenges();
+        ChallengeContainer.onComplete += UpdateChallenges;
     }
 
     void OnEnable()
     {
-        ChallengeContainer.onComplete += UpdateChallenges;
+        Debug.Log("OnEnable called");
     }
 
     void OnDisable()
     {
         ChallengeContainer.onComplete -= UpdateChallenges;
+
     }
 
     void UpdateChallenges()
@@ -46,8 +73,7 @@ public class ChallengeBuilder : MonoBehaviour
 
             ChallengeNameText.text = ChallengeName;
             ChallengeDescriptionText.text = ChallengeDescriptionBuilder(c);
-            //challengeInstance.transform.parent = challengeHolder.transform;
-            challengeInstance.transform.SetParent(challengeHolder.transform);
+            challengeInstance.transform.parent = challengeHolder.transform;
         }
     }
 

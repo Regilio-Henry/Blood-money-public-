@@ -27,6 +27,7 @@ public class healthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        totalHealth = GameObject.Find("GameController").GetComponent<playerStats>().playerHealthTotal;
         currentHealth = totalHealth;       
         for (int i = 0; i < totalHealth; i++)
         {

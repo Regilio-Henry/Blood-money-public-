@@ -5,6 +5,8 @@ using UnityEngine;
 public class playerStats : MonoBehaviour
 {
     public int healthTotal;
+    public int playerHealthTotal;
+
     public int speed;
     public int xpTotal;
     public int swingSpeed;
