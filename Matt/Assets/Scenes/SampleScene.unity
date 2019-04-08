@@ -742,6 +742,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103a02919d87e4c46a1dd644c5f50685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &291797089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 291797090}
+  - component: {fileID: 291797091}
+  m_Layer: 0
+  m_Name: AmmoContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &291797090
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291797089}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -3.495059}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2097166674}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 43.75}
+  m_SizeDelta: {x: -1776.8, y: 87.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &291797091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291797089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -405508275, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
 --- !u!1 &293291286
 GameObject:
   m_ObjectHideFlags: 0
@@ -70140,6 +70199,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43666148, y: 0.244447}
   m_EdgeRadius: 0
+--- !u!114 &1701462398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701462392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f6e1e61a8ed5ad4793621a256923d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalAmmo: 5
+  RechargeRate: 0.1
+  AmmoContainer: {fileID: 291797090}
+  AmmoSlot: {fileID: 654101305267656334, guid: fc08d85a12995f64dab5d9e46631c167, type: 3}
 --- !u!1 &1710118253
 GameObject:
   m_ObjectHideFlags: 0
@@ -70233,7 +70308,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710118253}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ced97e9e5431b94c83f6746bbb82518, type: 3}
   m_Name: 
@@ -70307,7 +70382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1760431549
 Transform:
   m_ObjectHideFlags: 0
@@ -70530,7 +70605,7 @@ RectTransform:
   m_Children:
   - {fileID: 1026577720}
   m_Father: {fileID: 2097166674}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.9}
   m_AnchorMax: {x: 1, y: 1}
@@ -71557,6 +71632,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1888870085}
+  - {fileID: 291797090}
   - {fileID: 1873294487}
   m_Father: {fileID: 0}
   m_RootOrder: 6

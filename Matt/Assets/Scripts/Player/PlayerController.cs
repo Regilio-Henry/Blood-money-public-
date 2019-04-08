@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     GameObject gameController;
 
+
+
     public delegate void playerEvents();
     public static event playerEvents onDodge;
 
@@ -58,13 +60,13 @@ public class PlayerController : MonoBehaviour
         DashTrail = GameObject.Find("DashTrail").GetComponent<TrailRenderer>();
     }
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
         HandleMovement();
         HandleDodge();
         HandleAttack();
-        
+
     }
 
     void HandleMovement()
@@ -93,7 +95,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleDodge()
     {
-        if(Time.timeScale != 0)
+        if (Time.timeScale != 0)
         {
             if (Input.GetKeyDown(KeyCode.Space) && Time.time > NextDash && movement.magnitude != 0) // space  used for the dash, could easily be changed
             {
@@ -125,12 +127,18 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.LeftShift))//if the user is holding down shift, do a ranged attack
             {
-                if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextRangedAttack)
+                if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextRangedAttack) // Shift + Left Mouse Button  -   Ranged Attack
                 {
                     NextRangedAttack = Time.time + RangedAttackRate;
-                    Instantiate(ArrowPreFab, FirePoint.position, FirePoint.rotation); //normal
+                    if (this.GetComponent<AmmoBar>().GetAmmo() >= 1)
+                    {
+                        Instantiate(ArrowPreFab, FirePoint.position, FirePoint.rotation);
+                        this.GetComponent<AmmoBar>().ChangeAmmo(-1);
+                    }
+
+
                 }
-                else if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > NextSpell)
+                else if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > NextSpell) // Shift + Right Mouse Button    -   Spell Attack
                 {
                     Vector3 AttackPos;
                     AttackPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

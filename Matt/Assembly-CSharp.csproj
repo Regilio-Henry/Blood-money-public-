@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Dungeon Art Pack\AnimateSprite.cs" />
+    <Compile Include="Assets\Scripts\AmmoBar.cs" />
     <Compile Include="Assets\Scripts\AttackAnim.cs" />
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Camera\ScreenShake.cs" />
