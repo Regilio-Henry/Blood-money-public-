@@ -117,10 +117,11 @@ public class healthBar : MonoBehaviour
         if (currentHealth <= 0) //if the players health is 0 it will destroy the player. 
         {
             //Debug.Log("You died");
-
+    
             deathmenu.SetActive(true);
             GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
-            Time.timeScale = 0;
+            GameObject.Find("Main Camera").GetComponent<Animator>().SetTrigger("PitchDown");
+            Time.timeScale = 0;       
         }
     }
 }
