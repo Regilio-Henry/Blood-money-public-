@@ -29,4 +29,11 @@ public class LoadSceneOnClick : MonoBehaviour
     {
         SceneManager.LoadScene(SceneIndex);
     }
+
+    public void LoadByIndexInstant(int sceneIndex)
+    {
+
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneIndex);
+    }
 }
