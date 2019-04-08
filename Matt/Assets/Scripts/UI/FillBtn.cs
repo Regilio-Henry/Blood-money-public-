@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class EndCredits : MonoBehaviour
+public class FillBtn : MonoBehaviour
 {
+
 
     [SerializeField]
     public float TimeToSkip;
@@ -15,13 +16,13 @@ public class EndCredits : MonoBehaviour
     float skipTimer = 0f;
     public Animator animator;
     bool StopUnfilling = false;
-
+    
     private void Start()// Start is called before the first frame update
     {
         FillImg = GameObject.Find("HoldFiller").GetComponent<Image>();
         TimeToSkip = 1;
     }
-
+    
 
     void Update()    // Update is called once per frame
     {
@@ -49,7 +50,7 @@ public class EndCredits : MonoBehaviour
             FillImg.fillAmount = skipTimer / TimeToSkip;
         }
     }
-
+    
 
     public void FadeOut()
     {

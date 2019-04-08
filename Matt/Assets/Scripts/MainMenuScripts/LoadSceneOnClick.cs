@@ -24,7 +24,10 @@ public class LoadSceneOnClick : MonoBehaviour
         SceneIndex = sceneIndex;
         Invoke("OnFadeComplete", 1.0f);
     }
-
+    public void LoadByIndexInstant(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
     public void OnFadeComplete()
     {
         SceneManager.LoadScene(SceneIndex);
