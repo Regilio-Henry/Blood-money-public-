@@ -7,9 +7,20 @@ public class LoadSceneOnClick : MonoBehaviour
 {
     public Animator animator;
     private int SceneIndex;
+    private bool fade = false;
+
+    public void Update()
+    {
+        if(fade)
+        {
+            AudioListener.volume -= Time.deltaTime * .5f;
+        }
+    }
+
     public void LoadByIndex(int sceneIndex)
     {
         animator.SetTrigger("FadeOut");
+        fade = true;
         SceneIndex = sceneIndex;
         Invoke("OnFadeComplete", 1.0f);
     }
