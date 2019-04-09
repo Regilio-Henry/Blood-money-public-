@@ -110,7 +110,6 @@
     <Compile Include="Assets\Scripts\PlayerMobility.cs" />
     <Compile Include="Assets\Scripts\PressRToRestart.cs" />
     <Compile Include="Assets\Scripts\UI\cellIndex.cs" />
-    <Compile Include="Assets\Scripts\UI\FillButton.cs" />
     <Compile Include="Assets\Scripts\UI\FillBtn.cs" />
     <Compile Include="Assets\Scripts\UI\FPSDisplay.cs" />
     <Compile Include="Assets\Scripts\UI\SetChallengeHolder.cs" />

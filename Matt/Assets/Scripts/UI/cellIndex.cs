@@ -19,6 +19,18 @@ public class cellIndex : MonoBehaviour
         equipButton = GameObject.Find("EquipButton");
     }
 
+    public void LockCheck()
+    {
+        if (locked)
+        {
+            transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+        }
+        else
+        {
+            transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+        }
+    }
+
     public void checkSelection()
     {
         if (selected)

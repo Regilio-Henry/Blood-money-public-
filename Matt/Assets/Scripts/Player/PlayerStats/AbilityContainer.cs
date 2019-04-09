@@ -24,7 +24,7 @@ public class AbilityContainer : MonoBehaviour
 
     int currentIndex;
     public ToggleGroup toggleGroup;
-    List<Ability> selectedAbilites = new List<Ability>();
+    public List<Ability> selectedAbilites = new List<Ability>();
 
 
     private void Awake()
@@ -35,6 +35,14 @@ public class AbilityContainer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //if (selectedAbilites != null)
+        //{
+        //    foreach(Ability ability in selectedAbilites)
+        //    {
+        //        ability.
+        //    }
+        //}
+
         health = gameController.GetComponent<playerStats>().healthTotal;
         currentHealth = health;
         updateHealth();
@@ -52,7 +60,9 @@ public class AbilityContainer : MonoBehaviour
             toggle.group = toggleGroup;
             cell.transform.GetChild(0).GetComponent<Image>().sprite = ability.ItemSprite;
             cell.transform.GetComponent<cellIndex>().index = i;
-            PlayVideo("test");
+            cell.transform.GetComponent<cellIndex>().locked = !gameController.transform.GetComponent<ChallengeBuilder>().challenges[ability.challengeIndex].ChallengeComplete;
+            cell.transform.GetComponent<cellIndex>().LockCheck();
+            PlayVideo("test2");
             if (i == 0)
                toggle.isOn = true;
         }

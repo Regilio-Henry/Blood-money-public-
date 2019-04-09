@@ -11,6 +11,7 @@ public class ChallengeBuilder : MonoBehaviour
     private GameObject challengeHolder;
     public GameObject challengePrefab;
     public Color completionColour;
+    public List<Ability> selectedAbilites;
 
     private void Awake()
     {
@@ -66,23 +67,29 @@ public class ChallengeBuilder : MonoBehaviour
 
             if (c.ChallengeComplete)
             {
-                ChallengeName += " (Complete)";
+                ChallengeName += "(Complete)";
                 ChallengeNameText.color = completionColour;
                 ChallengeDescriptionText.color = completionColour;
             }
 
             ChallengeNameText.text = ChallengeName;
             ChallengeDescriptionText.text = ChallengeDescriptionBuilder(c);
-            challengeInstance.transform.parent = challengeHolder.transform;
+            if (challengeHolder != null)
+            {
+                challengeInstance.transform.parent = challengeHolder.transform;
+            }
         }
     }
 
 
     void ClearChallenges()
     {
-        foreach (Transform child in challengeHolder.transform)
+        if (challengeHolder != null)
         {
-            Destroy(child.gameObject);
+            foreach (Transform child in challengeHolder.transform)
+            {
+                Destroy(child.gameObject);
+            }
         }
     }
 
