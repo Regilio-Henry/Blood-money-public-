@@ -446,23 +446,19 @@ MonoBehaviour:
   vp_VideoPlayerRef: {fileID: 1615053719}
   abilities:
   - videoName: test2
-    itemDescription: This is a test for the first weapon
-    weaponName: Weapon 1
+    itemDescription: the storm is a spell with which the player can strike lightning
+      down on their foes
+    weaponName: storm
     ItemSprite: {fileID: 21300000, guid: 5f30794e545df114a84af46abf928a66, type: 3}
     challengeIndex: 0
-    cost: 5
+    cost: 1
   - videoName: test
-    itemDescription: This is a test for the second weapon
-    weaponName: Weapon 2
-    ItemSprite: {fileID: 21300000, guid: 0057091442adb744c9f54d2d48b35e7e, type: 3}
+    itemDescription: The arrow is a ranged weapon that the player can use to fire
+      a crossbowbolt at enemies
+    weaponName: arrow
+    ItemSprite: {fileID: 21300000, guid: 95ec9d50b7d1af144a17056e3ff0fbe7, type: 3}
     challengeIndex: 1
     cost: 2
-  - videoName: test
-    itemDescription: This is a test for the third weapon
-    weaponName: Weapon 3
-    ItemSprite: {fileID: 21300000, guid: 443168570e4f4ae40a9549a787174c91, type: 3}
-    challengeIndex: 2
-    cost: 3
   abilityHolder: {fileID: 1046375851087913}
   cellPrefab: {fileID: 432774567895304217, guid: 3bf8173b9680f064a8a74816f3e2e106,
     type: 3}
@@ -475,6 +471,7 @@ MonoBehaviour:
   equipButton: {fileID: 1644789167}
   gameController: {fileID: 0}
   toggleGroup: {fileID: 1046375851087914}
+  selectedAbilites: []
 --- !u!1 &291806109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cea690181514046a883541f981e7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthTotal: 10
+  healthTotal: 6
   playerHealthTotal: 0
   speed: 0
   xpTotal: 0
@@ -1277,25 +1274,12 @@ MonoBehaviour:
     challenge:
       challengeValue: 10
       parameters: 1
-      type: 0
-      specifier: 0
-  - challengeName: Kills
-    ChallengeComplete: 0
-    challenge:
-      challengeValue: 10
-      parameters: 1
-      type: 1
-      specifier: 0
-  - challengeName: Dash Master
-    ChallengeComplete: 0
-    challenge:
-      challengeValue: 10
-      parameters: 1
       type: 1
       specifier: 0
   challengePrefab: {fileID: 116015448752614846, guid: d1814dc68f67de64cbf312c6b4c83166,
     type: 3}
-  completionColour: {r: 0.42352942, g: 0.42352942, b: 0.42352942, a: 0}
+  completionColour: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+  selectedAbilites: []
 --- !u!114 &1205870519
 MonoBehaviour:
   m_ObjectHideFlags: 0

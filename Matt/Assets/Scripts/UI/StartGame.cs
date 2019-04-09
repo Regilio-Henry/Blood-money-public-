@@ -3,14 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    GameObject ChallengeBuilder;
+    GameObject gameController;
+    GameObject Canvas;
     private void Start()
     {
-        ChallengeBuilder = GameObject.Find("GameController");
+        gameController = GameObject.Find("GameController");
+        Canvas = GameObject.Find("Canvas");
+
     }
     public void LoadGame()
     {
         SceneManager.LoadScene("SampleScene");
-       // ChallengeBuilder.GetComponent<ChallengeBuilder>().OnSceneStart();
+        gameController.GetComponent<ChallengeBuilder>().selectedAbilites = Canvas.gameObject.GetComponent<AbilityContainer>().selectedAbilites;
     }
 }

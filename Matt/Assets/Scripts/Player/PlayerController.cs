@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        gameController = GameObject.Find("GameController");
         DashTrail = GameObject.Find("DashTrail").GetComponent<TrailRenderer>();
     }
 
@@ -121,6 +122,19 @@ public class PlayerController : MonoBehaviour
         DashTrail.emitting = false;
     }
 
+    public bool checkForAbility(string name)
+    {
+        foreach(Ability a in gameController.GetComponent<ChallengeBuilder>().selectedAbilites)
+        {
+            if(a.weaponName == name)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     void HandleAttack()
     {
         if (Time.timeScale != 0)
@@ -129,27 +143,32 @@ public class PlayerController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextRangedAttack) // Shift + Left Mouse Button  -   Ranged Attack
                 {
-                    NextRangedAttack = Time.time + RangedAttackRate;
-                    if (this.GetComponent<AmmoBar>().GetAmmo() >= 1)
+                    if (checkForAbility("arrow"))
                     {
-                        Instantiate(ArrowPreFab, FirePoint.position, FirePoint.rotation);
-                        this.GetComponent<AmmoBar>().ChangeAmmo(-1);
+                        NextRangedAttack = Time.time + RangedAttackRate;
+                        if (this.GetComponent<AmmoBar>().GetAmmo() >= 1)
+                        {
+                            Instantiate(ArrowPreFab, FirePoint.position, FirePoint.rotation);
+                            this.GetComponent<AmmoBar>().ChangeAmmo(-1);
+                        }
                     }
-
 
                 }
                 else if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > NextSpell) // Shift + Right Mouse Button    -   Spell Attack
                 {
-                    Vector3 AttackPos;
-                    AttackPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    AttackPos.z = 0;
-                    AttackPos.y += 2.0f;
+                    if (checkForAbility("storm"))
+                    {
+                        Vector3 AttackPos;
+                        AttackPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        AttackPos.z = 0;
+                        AttackPos.y += 2.0f;
 
-                    SpellAttackFirePoint.transform.position = AttackPos;
+                        SpellAttackFirePoint.transform.position = AttackPos;
 
-                    Instantiate(SpellAttackPreFab, SpellAttackFirePoint.position, SpellAttackFirePoint.rotation);
+                        Instantiate(SpellAttackPreFab, SpellAttackFirePoint.position, SpellAttackFirePoint.rotation);
 
-                    NextSpell = Time.time + SpellAttackRate;
+                        NextSpell = Time.time + SpellAttackRate;
+                    }
 
                 }
             }
