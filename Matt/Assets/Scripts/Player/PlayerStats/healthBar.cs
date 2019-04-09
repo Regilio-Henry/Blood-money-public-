@@ -53,7 +53,7 @@ public class healthBar : MonoBehaviour
         if (col.gameObject.tag == "EnemyAttack" && Time.time > NextHit)
         {
             NextHit = Time.time + IFrameTime;
-            ChangeHealth(-0.5f);
+            ChangeHealth(-1);
             InvokeRepeating("IFrames", 0, .1f);
         }
     }
@@ -114,11 +114,8 @@ public class healthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log(currentHealth);
         if (currentHealth <= 0) //if the players health is 0 it will destroy the player. 
         {
-            //Debug.Log("You died");
-    
             deathmenu.SetActive(true);
             GameObject.Find("Player").GetComponent<SpriteRenderer>().enabled = false;
             GameObject.Find("Main Camera").GetComponent<Animator>().SetTrigger("PitchDown");
