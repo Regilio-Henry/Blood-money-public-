@@ -25,7 +25,11 @@ public class ChallengeBuilder : MonoBehaviour
     {
         print(scene.name);
 
-        if (scene.name == "SampleScene")
+        if (scene.name != "SampleScene")
+        {
+            GetComponent<EnemySpawner>().enabled = false;
+        }
+        else
         {
             GetComponent<EnemySpawner>().enabled = true;
         }

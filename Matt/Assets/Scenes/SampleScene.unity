@@ -69678,6 +69678,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7597222848029580505, guid: 86f1fea08d467bc41a28c7db91527f01,
         type: 3}
+    - target: {fileID: 1633062413649998676, guid: 4f54087964ab29f45be111b848876501,
+        type: 3}
+      propertyPath: thunder
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b4a6579f737e9d42800e389fa2b5747, type: 3}
+    - target: {fileID: 1633062413649998676, guid: 4f54087964ab29f45be111b848876501,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 519420035}
+    - target: {fileID: 1633062413649998676, guid: 4f54087964ab29f45be111b848876501,
+        type: 3}
+      propertyPath: thunderSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b4a6579f737e9d42800e389fa2b5747, type: 3}
+    - target: {fileID: 1633062413649998676, guid: 4f54087964ab29f45be111b848876501,
+        type: 3}
+      propertyPath: arrowSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8cb0c2cf79113f648a6f8f241414dcd0, type: 3}
+    - target: {fileID: 1633062413649998676, guid: 4f54087964ab29f45be111b848876501,
+        type: 3}
+      propertyPath: dashSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8caf6d15ffb7fb84f89d6d3fd47001f3, type: 3}
+    - target: {fileID: 1633062413649998676, guid: 4f54087964ab29f45be111b848876501,
+        type: 3}
+      propertyPath: slashSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4fc438bd4e9fc1c40b31c249e45b844d, type: 3}
     - target: {fileID: 1633062413649998664, guid: 4f54087964ab29f45be111b848876501,
         type: 3}
       propertyPath: m_Mass

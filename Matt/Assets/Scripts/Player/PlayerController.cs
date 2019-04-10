@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -50,7 +48,12 @@ public class PlayerController : MonoBehaviour
     public delegate void playerEvents();
     public static event playerEvents onDodge;
 
+    public AudioClip thunderSound;
+    public AudioClip arrowSound;
+    public AudioClip dashSound;
+    public AudioClip slashSound;
 
+    public AudioSource audioSource;
 
 
 
@@ -110,7 +113,7 @@ public class PlayerController : MonoBehaviour
                 {
                     onDodge();
                 }
-
+                audioSource.PlayOneShot(dashSound);
                 Invoke("EndTrail", .15f);
             }
         }
@@ -150,6 +153,7 @@ public class PlayerController : MonoBehaviour
                         {
                             Instantiate(ArrowPreFab, FirePoint.position, FirePoint.rotation);
                             this.GetComponent<AmmoBar>().ChangeAmmo(-1);
+                            audioSource.PlayOneShot(arrowSound);
                         }
                     }
 
@@ -162,7 +166,7 @@ public class PlayerController : MonoBehaviour
                         AttackPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                         AttackPos.z = 0;
                         AttackPos.y += 2.0f;
-
+                        audioSource.PlayOneShot(thunderSound);
                         SpellAttackFirePoint.transform.position = AttackPos;
 
                         Instantiate(SpellAttackPreFab, SpellAttackFirePoint.position, SpellAttackFirePoint.rotation);
@@ -176,6 +180,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Mouse0) && Time.time > NextAttack)
                 {
+                    audioSource.PlayOneShot(slashSound);
                     NextAttack = Time.time + AttackRate;
                     animator.SetTrigger("Attack");
                 }
