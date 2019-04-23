@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using TMPro;
 
 public class AbilityContainer : MonoBehaviour
 {
     public int health;
     public int currentHealth;
-    public Text description;
-    public Text itemname;
-    public Text challenge;
+    public TextMeshProUGUI description;
+    public TextMeshProUGUI itemname;
+    public TextMeshProUGUI challenge;
     public VideoPlayer vp_VideoPlayerRef;
     public Ability[] abilities;
     public GameObject abilityHolder;
