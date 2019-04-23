@@ -35,6 +35,7 @@ public class AbilityContainer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //load ability holder from file
         //if (selectedAbilites != null)
         //{
         //    foreach(Ability ability in selectedAbilites)
@@ -43,15 +44,13 @@ public class AbilityContainer : MonoBehaviour
         //    }
         //}
 
+        //Set health total from game and update health
         health = gameController.GetComponent<playerStats>().healthTotal;
         currentHealth = health;
         updateHealth();
         
-        //currentHealth
-        //load selected abilities
 
-
-        //load ability holder
+        //Populate the list of abilities
         for(int i = 0; i < abilities.Length; i++)
         {
             Ability ability = abilities[i];
@@ -62,17 +61,17 @@ public class AbilityContainer : MonoBehaviour
             cell.transform.GetComponent<cellIndex>().index = i;
             cell.transform.GetComponent<cellIndex>().locked = !gameController.transform.GetComponent<ChallengeBuilder>().challenges[ability.challengeIndex].ChallengeComplete;
             cell.transform.GetComponent<cellIndex>().LockCheck();
-            PlayVideo("test2");
-            if (i == 0)
-               toggle.isOn = true;
-        }
 
-        //abilityHolder.transform.GetChild(0).GetComponent<Toggle>().onClick.Invoke();
-        //abilityHolder.transform.GetChild(0).GetComponent<Button>().Select();
-        //abilityHolder.transform.GetChild(0).GetComponent<Toggle>().isOn = true;
+            if (i == 0)
+            {
+                toggle.isOn = true;
+                PlayVideo(abilities[i].videoName);
+            }
+        }
     }
 
 
+    //Sets the current selection for the ability
     public void selectAbility()
     {
         var currentAbility = abilities[currentIndex];
@@ -97,6 +96,7 @@ public class AbilityContainer : MonoBehaviour
         }
     }
 
+    //Sets the currently selected ability
     public void getIndexFromChild(int i)
     {
 
@@ -104,6 +104,7 @@ public class AbilityContainer : MonoBehaviour
         currentIndex = i;
     }
 
+    //Updates the health in the ui
     void updateHealth()
     {
         foreach (Transform child in healthHolder.transform)
@@ -120,6 +121,7 @@ public class AbilityContainer : MonoBehaviour
 
     }
 
+    //Dispalys the current abilities description, name and video
     void displayAbility(Ability ability)
     {
         foreach (Transform child in cueHolder.transform)
@@ -139,6 +141,7 @@ public class AbilityContainer : MonoBehaviour
 
     }
 
+    //Plays a video
     public void PlayVideo(string videoName)
     {
        VideoClip clip = Resources.Load<VideoClip>(videoName) as VideoClip;

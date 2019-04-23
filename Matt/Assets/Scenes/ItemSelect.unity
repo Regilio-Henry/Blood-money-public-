@@ -445,14 +445,14 @@ MonoBehaviour:
   challenge: {fileID: 1019348978}
   vp_VideoPlayerRef: {fileID: 1615053719}
   abilities:
-  - videoName: test2
+  - videoName: thunder
     itemDescription: the storm is a spell with which the player can strike lightning
       down on their foes
     weaponName: storm
     ItemSprite: {fileID: 21300000, guid: 5f30794e545df114a84af46abf928a66, type: 3}
     challengeIndex: 0
     cost: 1
-  - videoName: test
+  - videoName: arrow
     itemDescription: The arrow is a ranged weapon that the player can use to fire
       a crossbowbolt at enemies
     weaponName: arrow
@@ -1549,21 +1549,21 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
   m_RenderMode: 2
-  m_AspectRatio: 3
+  m_AspectRatio: 5
   m_DataSource: 0
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 0
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
   m_Url: 
   m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
+  m_DirectAudioMutes: 01
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!114 &1615053720
@@ -4150,7 +4150,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 150
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1

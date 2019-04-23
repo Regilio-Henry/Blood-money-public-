@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        //transform.GetChild(0).GetChild(0).name;
         // Call the Spawn function after a delay of the spawnTime and then continue to call after the same amount of time.
         InvokeRepeating("Spawn", spawnTime, spawnTime);
     }
