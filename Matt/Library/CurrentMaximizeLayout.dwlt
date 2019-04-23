@@ -73,7 +73,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scenes
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\regil\Documents\GitHub\BloodMoney\BloodMoney\Matt
+  m_LastProjectPath: C:\Users\Jason\Documents\GitHub\BloodMoney\Matt
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
