@@ -12,30 +12,103 @@ public class playerStats : MonoBehaviour
     public int swingSpeed;
     public int dodgeTotal;
 
+    public int totalkills;
+    int batkills;
+    public int spiderkills;
+    public int skeletonkills;
+    
+
     void OnEnable()
     {
-        PlayerController.onDodge += IncrementValue;
+        PlayerController.onDodge += IncrementDodge;
+        SpiderAI.onkillSpider += IncrementSpiderKill;
+        AI.onkillSkeleton += IncrementSkeletonKill;
     }
 
     void OnDisable()
     {
-        PlayerController.onDodge -= IncrementValue;
+        PlayerController.onDodge -= IncrementDodge;
+        SpiderAI.onkillSpider -= IncrementSpiderKill;
     }
 
-    void IncrementValue()
+    void IncrementSpiderKill()
     {
-        var dodge = containsEnumType(ChallengeType.Dodge);
+        spiderkills++;
+        IncrementKill();
+    }
 
-        if (dodge != null)
+
+    void IncrementSkeletonKill()
+    {
+        skeletonkills++;
+        IncrementKill();
+    }
+
+    void IncrementKill()
+    {
+        var amount = containsEnumParameter(ChallengeParameters.Amount);
+
+        if (amount != null)
         {
-            var amount = containsEnumParameter(ChallengeParameters.Amount);
+            var kill = containsEnumType(ChallengeType.Kill);
 
-            if (amount != null)
+            if (kill != null)
             {
-                dodgeTotal++;
-                foreach (ChallengeContainer chall in amount)
+                totalkills++;
+
+                var spider = containsEnumSpecifier(ChallengeSpecifier.Spider);
+                var skeleton = containsEnumSpecifier(ChallengeSpecifier.Skeleton);
+                var all = containsEnumSpecifier(ChallengeSpecifier.All);
+
+                if (all != null)
                 {
-                    chall.CheckAmountChallenge(dodgeTotal);
+                    foreach (ChallengeContainer chall in all)
+                    {
+                        chall.CheckAmountChallenge(totalkills);
+                    }
+               }
+
+                if (spider != null)
+                {
+                    foreach (ChallengeContainer chall in spider)
+                    {
+                        chall.CheckAmountChallenge(spiderkills);
+                    }
+                }
+                
+                if (skeleton != null)
+                {
+                    foreach (ChallengeContainer chall in skeleton)
+                    {
+                        chall.CheckAmountChallenge(skeletonkills);
+                    }
+                }
+            }
+            
+        }
+    }
+
+    //Increment value when triggered
+    void IncrementDodge()
+    {
+        var amount = containsEnumParameter(ChallengeParameters.Amount);
+
+        if (amount != null)
+        {
+            var dodge = containsEnumType(ChallengeType.Dodge);
+
+            if (dodge != null)
+            {
+                var none = containsEnumSpecifier(ChallengeSpecifier.None);
+
+                dodgeTotal++;
+
+                if (none != null)
+                {
+                    foreach (ChallengeContainer chall in dodge)
+                    {
+                        chall.CheckAmountChallenge(dodgeTotal);
+                    }
                 }
             }
         }
@@ -55,6 +128,7 @@ public class playerStats : MonoBehaviour
         return challengeList;
     }
 
+    //check if challenge list contains type of enum
     List<ChallengeContainer> containsEnumSpecifier(ChallengeSpecifier specifier)
     {
         List<ChallengeContainer> challengeList = new List<ChallengeContainer>();
@@ -68,6 +142,7 @@ public class playerStats : MonoBehaviour
         return challengeList;
     }
 
+    //check if challenge list contains type of enum
     List<ChallengeContainer> containsEnumParameter(ChallengeParameters parameter)
     {
         List<ChallengeContainer> challengeList = new List<ChallengeContainer>();

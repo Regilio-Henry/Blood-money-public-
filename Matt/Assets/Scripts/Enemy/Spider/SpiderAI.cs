@@ -18,10 +18,16 @@ public class SpiderAI : MonoBehaviour
     public bool rayTest = false; //bool for raycast to see if target is within range to enter attackstate
     public float TargetDistance;
 
-
+    public delegate void EnemyEvents();
+    public static event EnemyEvents onkillSpider;
 
     public StateMachine<SpiderAI> stateMachine { get; set; }
 
+
+    private void OnDestroy()
+    {
+        onkillSpider();
+    }
 
     float distance;
     public enum State //can add names of new states here

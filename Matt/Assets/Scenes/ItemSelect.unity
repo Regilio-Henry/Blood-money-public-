@@ -584,7 +584,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 726929ed0708ce9469a1f66b528b86c9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1869,6 +1869,9 @@ MonoBehaviour:
   xpTotal: 0
   swingSpeed: 0
   dodgeTotal: 0
+  totalkills: 0
+  spiderkills: 0
+  skeletonkills: 0
 --- !u!114 &1205870518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1896,6 +1899,27 @@ MonoBehaviour:
       parameters: 1
       type: 1
       specifier: 0
+  - challengeName: Bane of the athropods
+    ChallengeComplete: 0
+    challenge:
+      challengeValue: 3
+      parameters: 1
+      type: 3
+      specifier: 2
+  - challengeName: Bone splitter
+    ChallengeComplete: 0
+    challenge:
+      challengeValue: 10
+      parameters: 1
+      type: 3
+      specifier: 3
+  - challengeName: Monster Slayer
+    ChallengeComplete: 0
+    challenge:
+      challengeValue: 20
+      parameters: 1
+      type: 3
+      specifier: 1
   challengePrefab: {fileID: 116015448752614846, guid: d1814dc68f67de64cbf312c6b4c83166,
     type: 3}
   completionColour: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}

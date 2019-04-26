@@ -105,9 +105,19 @@ public class ChallengeBuilder : MonoBehaviour
         {
             if(container.challenge.parameters == ChallengeParameters.Amount)
             {
-                if (container.challenge.specifier == ChallengeSpecifier.None)
+                if (container.challenge.specifier == ChallengeSpecifier.All)
                 {
                     challengeDescription = "Kill " + container.challenge.challengeValue + " Enemies";
+                }
+
+                if (container.challenge.specifier == ChallengeSpecifier.Skeleton)
+                {
+                    challengeDescription = "Kill " + container.challenge.challengeValue + " Skeletons";
+                }
+
+                if (container.challenge.specifier == ChallengeSpecifier.Spider)
+                {
+                    challengeDescription = "Kill " + container.challenge.challengeValue + " Spiders";
                 }
             }
         }

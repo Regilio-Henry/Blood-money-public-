@@ -6,7 +6,7 @@ public class LightningAttack : MonoBehaviour
 {
 
     public Animator SpellAnimator;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,9 @@ public class LightningAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag != "Wall" && other.gameObject.layer != 9)
+        {
             Destroy(other.gameObject);
+        }
     }
 }
 

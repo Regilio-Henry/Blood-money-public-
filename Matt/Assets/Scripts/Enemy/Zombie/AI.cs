@@ -21,6 +21,14 @@ public class AI : MonoBehaviour
 
     public StateMachine<AI> stateMachine { get; set; }
 
+    public delegate void EnemyEvents();
+    public static event EnemyEvents onkillSkeleton;
+
+
+    private void OnDestroy()
+    {
+        onkillSkeleton();
+    }
 
     float distance;
     public enum State //can add names of new states here

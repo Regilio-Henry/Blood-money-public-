@@ -21,8 +21,9 @@ public enum ChallengeParameters
 public enum ChallengeSpecifier
 {
     None,
-    Enitity,
-    Tag
+    All,
+    Spider,
+    Skeleton
 }
 
 [System.Serializable]

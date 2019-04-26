@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     public delegate void playerEvents();
     public static event playerEvents onDodge;
+    //public static event playerEvents 
 
     public AudioClip thunderSound;
     public AudioClip arrowSound;
@@ -136,6 +137,19 @@ public class PlayerController : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void setKillcount(string tag)
+    {
+        if ("Skeleton" == tag)
+        {
+
+        }
+
+        if ("Spider" == tag)
+        {
+
+        }
     }
 
     void HandleAttack()
