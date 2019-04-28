@@ -60,15 +60,17 @@ public class SecondState : State<AI>
                 break;
         };
 
-        float z = Mathf.Atan2((_owner.player.transform.position.y - _owner.transform.position.y), (_owner.player.transform.position.x - _owner.transform.position.x)) * Mathf.Rad2Deg + 90;
+        float distance = Vector2.Distance(_owner.transform.position, _owner.SkeleblobSpawn.position);
+
+        float z = Mathf.Atan2((_owner.SkeleblobSpawn.transform.position.y - _owner.transform.position.y), (_owner.SkeleblobSpawn.transform.position.x - _owner.transform.position.x)) * Mathf.Rad2Deg - 90;
 
         _owner.transform.eulerAngles = new Vector3(0, 0, z);
 
-        //_owner.transform.localEulerAngles = _owner.transform.eulerAngles + Vector3.forward(0, 190, -2 * _owner.transform.eulerAngles.z);
-
         _owner.transform.position = _owner.transform.position + _owner.gameObject.transform.up * _owner.speed * Time.deltaTime;
-      //  _owner.rb.AddForce(_owner.gameObject.transform.up * _owner.speed);
 
-        //_owner.transform.Rotate((Vector3.forward * Time.deltaTime) * 1000);
+        if (distance <= 0.5)
+        {
+            Destroy(_owner.gameObject);
+        }
     }
 }

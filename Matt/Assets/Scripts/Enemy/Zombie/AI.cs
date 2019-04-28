@@ -8,12 +8,14 @@ public class AI : MonoBehaviour
 {
     public bool switchState = false;
     public float gameTimer;
+    //public float startTime;
     public int seconds = 0;
     public Transform enemy;
     public float speed;
     public Transform sightStart, sightEnd;
     public Rigidbody2D rb;
     public GameObject player;
+    public GameObject SkeleblobSpawn;
     public bool rayTest = false; //bool for raycast to see if target is within range to enter attackstate
     public float TargetDistance;
 
@@ -23,7 +25,7 @@ public class AI : MonoBehaviour
 
     public delegate void EnemyEvents();
     public static event EnemyEvents onkillSkeleton;
-
+    
 
     private void OnDestroy()
     {
@@ -44,10 +46,12 @@ public class AI : MonoBehaviour
     {
         stateMachine = new StateMachine<AI>(this);
         stateMachine.ChangeState(FirstState.Instance); // use instance that already exists.
-        gameTimer = Time.time;
+        //startTime = Time.time;
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
+        SkeleblobSpawn = GameObject.Find("SkeleblobSpawn");
         distance = Vector2.Distance(transform.position, player.transform.position);
+        distance = Vector2.Distance(transform.position, SkeleblobSpawn.transform.position);
         enemyHealth = GetComponent<EnemyHealth>();  //Gets the compnonent for enemy health. 
     }
 
@@ -75,20 +79,21 @@ public class AI : MonoBehaviour
 
     private void Update() //Used to switch between states and call the statemachine update. 
     {
-
+        gameTimer = (int)(Time.timeSinceLevelLoad % 60f);
         distance = Vector2.Distance(transform.position, player.transform.position);
         Raycasting();
+        
 
-        if (distance > 1.5)
+        if (distance > 1.5 && gameTimer < 15 && gameTimer > 70)
         {
             state = State.Approach; //approach = first state 
         }
-        /*if (distance < 3 && distance > 2)
+        if (gameTimer >= 15 && gameTimer <= 70)
         {
             state = State.Flee; //flee = second state
             //Debug.Log("State Change");
-        }*/
-        if (distance <= 1.5)
+        }
+        if (distance <= 1.5 && gameTimer < 15 && gameTimer > 70)
         {
             state = State.Fight; //fight = third state
         }
