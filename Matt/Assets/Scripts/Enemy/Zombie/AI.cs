@@ -84,20 +84,27 @@ public class AI : MonoBehaviour
         Raycasting();
         
 
-        if (distance > 1.5 && gameTimer < 15 && gameTimer > 70)
+        if (distance > 1.5 && gameTimer < 60 && gameTimer > 70)
         {
             state = State.Approach; //approach = first state 
         }
-        if (gameTimer >= 15 && gameTimer <= 70)
+        if (gameTimer >= 60 && gameTimer <= 70)
         {
             state = State.Flee; //flee = second state
             //Debug.Log("State Change");
         }
-        if (distance <= 1.5 && gameTimer < 15 && gameTimer > 70)
+        if (distance <= 1.5 && gameTimer < 60 && gameTimer > 70)
         {
             state = State.Fight; //fight = third state
         }
 
         stateMachine.Update(); //when update is called on ai it will call update in the state. 
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {       
+        if (col.gameObject.tag == "SkeleblobSpawn" && state == State.Flee)
+        {            
+            Destroy(gameObject);
+        }
     }
 }

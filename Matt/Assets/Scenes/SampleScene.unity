@@ -1468,6 +1468,7 @@ MonoBehaviour:
   sightStart: {fileID: 0}
   sightEnd: {fileID: 0}
   player: {fileID: 0}
+  SkeleblobSpawn: {fileID: 0}
   rb: {fileID: 0}
   rayTest: 0
   TargetDistance: 0
@@ -1791,6 +1792,7 @@ MonoBehaviour:
   sightEnd: {fileID: 0}
   rb: {fileID: 0}
   player: {fileID: 1357685222}
+  SkeleblobSpawn: {fileID: 0}
   rayTest: 0
   TargetDistance: 0
   state: 0
@@ -68207,6 +68209,7 @@ MonoBehaviour:
   sightEnd: {fileID: 0}
   rb: {fileID: 0}
   player: {fileID: 1357685222}
+  SkeleblobSpawn: {fileID: 0}
   rayTest: 0
   TargetDistance: 0
   state: 0
@@ -69321,6 +69324,7 @@ MonoBehaviour:
   sightEnd: {fileID: 0}
   rb: {fileID: 0}
   player: {fileID: 1357685222}
+  SkeleblobSpawn: {fileID: 0}
   rayTest: 0
   TargetDistance: 0
   state: 0
@@ -69891,6 +69895,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1633062413352411814, guid: 4f54087964ab29f45be111b848876501,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f54087964ab29f45be111b848876501, type: 3}
 --- !u!1 &1683015262
@@ -70036,6 +70045,7 @@ MonoBehaviour:
   sightEnd: {fileID: 0}
   rb: {fileID: 0}
   player: {fileID: 0}
+  SkeleblobSpawn: {fileID: 0}
   rayTest: 0
   TargetDistance: 0
   state: 0
@@ -71475,7 +71485,7 @@ PrefabInstance:
     - target: {fileID: 2351383696908926807, guid: 000330ec9554e18448936911e6fa5510,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2351383696908926807, guid: 000330ec9554e18448936911e6fa5510,
         type: 3}
@@ -71490,7 +71500,7 @@ PrefabInstance:
     - target: {fileID: 2351383696908926824, guid: 000330ec9554e18448936911e6fa5510,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -12.469
+      value: -12.13
       objectReference: {fileID: 0}
     - target: {fileID: 2351383696908926824, guid: 000330ec9554e18448936911e6fa5510,
         type: 3}
@@ -71566,7 +71576,7 @@ PrefabInstance:
     - target: {fileID: 2351383696908926826, guid: 000330ec9554e18448936911e6fa5510,
         type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2351383696908926827, guid: 000330ec9554e18448936911e6fa5510,
         type: 3}
@@ -71712,6 +71722,7 @@ MonoBehaviour:
   sightEnd: {fileID: 0}
   rb: {fileID: 0}
   player: {fileID: 1357685222}
+  SkeleblobSpawn: {fileID: 0}
   rayTest: 0
   TargetDistance: 0
   state: 0
@@ -72138,7 +72149,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2138818249}
-  m_Layer: 0
+  - component: {fileID: 2138818250}
+  m_Layer: 12
   m_Name: SkeleblobSpawn
   m_TagString: SkeleblobSpawn
   m_Icon: {fileID: 0}
@@ -72153,12 +72165,38 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138818248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.99, y: -0, z: -934.6546}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.33, y: 6.18, z: -934.6546}
+  m_LocalScale: {x: 1.1576, y: 1.1576, z: 1.1576}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2138818250
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138818248}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &2351383696670941449
 PrefabInstance:
   m_ObjectHideFlags: 0

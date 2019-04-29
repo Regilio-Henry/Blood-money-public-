@@ -14,6 +14,7 @@ public class BlobAI : MonoBehaviour
     public float standing;
     public Transform sightStart, sightEnd;
     public GameObject player;
+    public GameObject SkeleblobSpawn;
     public Rigidbody2D rb;
 
     public bool rayTest = false; //bool for raycast to see if target is within range to enter AttackState
@@ -47,7 +48,9 @@ public class BlobAI : MonoBehaviour
         //startTime = Time.time;
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
+        SkeleblobSpawn = GameObject.Find("SkeleblobSpawn");
         distance = Vector2.Distance(transform.position, player.transform.position);
+        distance = Vector2.Distance(transform.position, SkeleblobSpawn.transform.position);
 
     }
 

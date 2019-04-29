@@ -60,7 +60,7 @@ public class SecondState : State<AI>
                 break;
         };
 
-        float distance = Vector2.Distance(_owner.transform.position, _owner.SkeleblobSpawn.position);
+        //float distance = Vector2.Distance(_owner.transform.position, _owner.SkeleblobSpawn.position);
 
         float z = Mathf.Atan2((_owner.SkeleblobSpawn.transform.position.y - _owner.transform.position.y), (_owner.SkeleblobSpawn.transform.position.x - _owner.transform.position.x)) * Mathf.Rad2Deg - 90;
 
@@ -68,9 +68,9 @@ public class SecondState : State<AI>
 
         _owner.transform.position = _owner.transform.position + _owner.gameObject.transform.up * _owner.speed * Time.deltaTime;
 
-        if (distance <= 0.5)
-        {
-            Destroy(_owner.gameObject);
-        }
+        //if (distance <= 0.5)
+        //{
+        //    Destroy(_owner.gameObject);
+        //}
     }
 }
