@@ -84,16 +84,16 @@ public class AI : MonoBehaviour
         Raycasting();
         
 
-        if (distance > 1.5 && gameTimer < 60 && gameTimer > 70)
+        if (distance > 1.5 && gameTimer < 50 && gameTimer > 60)
         {
             state = State.Approach; //approach = first state 
         }
-        if (gameTimer >= 60 && gameTimer <= 70)
+        if (gameTimer >= 50 && gameTimer <= 60)
         {
             state = State.Flee; //flee = second state
             //Debug.Log("State Change");
         }
-        if (distance <= 1.5 && gameTimer < 60 && gameTimer > 70)
+        if (distance <= 1.5 && gameTimer < 50 && gameTimer > 60)
         {
             state = State.Fight; //fight = third state
         }
